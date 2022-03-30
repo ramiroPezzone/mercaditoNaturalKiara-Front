@@ -1,12 +1,13 @@
+const URIRaiz = 'https://mercadito-natural-kiara.herokuapp.com/'
 const URIs = {
-    admins: 'http://localhost:8080/admins',
-    productosAdmins: 'http://localhost:8080/admins/productos',
-    categorys: 'http://localhost:8080/admins/categorys',
-    imagenes: 'http://localhost:8080/imgs/',
-    edicionProducto: 'http://localhost:8080/admins/editar',
-    guardarEdicionProducto: 'http://localhost:8080/admins/guardarEdit',
-    productosUsuarios: 'http://localhost:8080/usuarios/productos',
-    enviarMensaje: 'http://localhost:8080/usuarios/enviarMensaje',
+    admins: `${URIRaiz}/admins`,
+    productosAdmins: `${URIRaiz}/admins/productos`,
+    categorys: `${URIRaiz}/admins/categorys`,
+    imagenes: `${URIRaiz}/imgs/`,
+    edicionProducto: `${URIRaiz}/admins/editar`,
+    guardarEdicionProducto: `${URIRaiz}/admins/guardarEdit`,
+    productosUsuarios: `${URIRaiz}/usuarios/productos`,
+    enviarMensaje: `${URIRaiz}/usuarios/enviarMensaje`,
 }
 
 module.exports = URIs
