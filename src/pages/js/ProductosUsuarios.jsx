@@ -10,10 +10,6 @@ const URI = require('../../URIs')
 
 export const ProductosUsuarios = () => {
 
-    // HEROKU
-    // const URIImage = 'https://alm-nat-kiara-v1-back.herokuapp.com/imgs/'
-
-    // LOCAL
     const URIImage = URI.imagenes
 
     useEffect(() => {
@@ -27,10 +23,6 @@ export const ProductosUsuarios = () => {
 
     useEffect(() => {
         (async () => {
-            // HEROKU
-            // const res = await axios.get("https://alm-nat-kiara-v1-back.herokuapp.com/usuarios/productos");
-
-            // LOCAL
             const res = await axios.get(URI.productosUsuarios);
             setProductos(res.data);
             setCargaCompleta(true)
