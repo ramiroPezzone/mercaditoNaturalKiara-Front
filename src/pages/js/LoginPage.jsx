@@ -6,10 +6,6 @@ const URI = require('../../URIs')
 
 export const LoginPage = (props) => {
 
-    // HEROKU
-    // const URIAdmins = 'https://alm-nat-kiara-v1-back.herokuapp.com/admins'
-
-    // LOCAL
     const URIAdmins = URI.admins
 
     useEffect(() => {

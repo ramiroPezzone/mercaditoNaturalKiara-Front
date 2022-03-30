@@ -1,4 +1,4 @@
-const URIRaiz = 'https://mercadito-natural-kiara.herokuapp.com/'
+const URIRaiz = 'https://mercadito-natural-kiara.herokuapp.com'
 const URIs = {
     admins: `${URIRaiz}/admins`,
     productosAdmins: `${URIRaiz}/admins/productos`,
