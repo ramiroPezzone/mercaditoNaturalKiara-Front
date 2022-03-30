@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import { ConfirmacionDeEliminacion } from "./ConfirmacionDeEliminacion";
 import axios from 'axios';
 import styles from '../css/CardProductoAdmin.module.css'
+import URI from '../../URIs'
 
 export const CardProductoAdmin = (props) => {
 
-    const URIDelete = 'http://localhost:8080/admins/productos'
+    const URIAdmins = URI.productosAdmins
 
     const [confirmacionOculta, setConfirmacionOculta] = useState(true)
 
@@ -20,7 +21,7 @@ export const CardProductoAdmin = (props) => {
     }
 
     const confirmacionEliminacion = async (id) => {
-        await axios.delete(`${URIDelete}/${id}`)
+        await axios.delete(`${URIAdmins}/${id}`)
         props.avisoDeEliminacion()
     }
 

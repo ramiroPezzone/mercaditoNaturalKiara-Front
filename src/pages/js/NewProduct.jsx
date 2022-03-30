@@ -14,11 +14,6 @@ export const NewProduct = () => {
         document.title = `Administración de productos`;
     });
 
-    // HEROKU
-    // const URIAgregarProd = 'https://alm-nat-kiara-v1-back.herokuapp.com/admins/productos'
-
-
-    // LOCAL
     const URIAgregarProd = URIs.productosAdmins
 
     // Fetch de las categorías

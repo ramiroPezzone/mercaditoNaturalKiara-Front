@@ -9,10 +9,6 @@ const URI = require('../../URIs')
 
 export const ProductosAdmins = (props) => {
 
-  // HEROKU
-  // const URiAdminsProds = 'https://alm-nat-kiara-v1-back.herokuapp.com/admins/productos'
-
-  // LOCAL
   const URiAdminsProds = URI.productosAdmins
   const URiAdminsImgs = URI.imagenes
 
