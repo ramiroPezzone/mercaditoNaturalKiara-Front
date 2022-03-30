@@ -1,0 +1,55 @@
+.containerIcoCarritoVacio {
+  position: fixed;
+  top: 80px;
+  right: 4vw;
+  background-color: var(--swamp-green);
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  border: 1px solid var(--banana-mania);
+  filter: opacity(0.5);
+  transition: .5s;
+}
+.containerIcoCarritoLleno {
+  position: fixed;
+  top: 80px;
+  right: 4vw;
+  background-color: var(--swamp-green);
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  box-shadow: 0 0 10px 8px #fff;
+  transition: .5s;
+  z-index: 10000;
+}
+.flexCarrito {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.carritoVacio {
+  font-size: 1.6em;
+  width: 80%;
+  height: 50px;
+  background: url(../../assets/imgs/carritoVacio.png) no-repeat center;
+  background-size: contain;
+  filter: grayscale(80%);
+}
+.carritoLleno {
+  font-size: 1.6em;
+  width: 80%;
+  height: 50px;
+  background: url(../../assets/imgs/carritoLleno.png) no-repeat center;
+  background-size: contain;
+  animation: productosEnCarrito 7s infinite;
+}
+
+@keyframes productosEnCarrito {
+  5% {transform: rotate(-10deg)}
+  10% {transform: rotate(10deg)}
+  15% {transform: rotate(-10deg)}
+  20% {transform: rotate(0deg)}
+}

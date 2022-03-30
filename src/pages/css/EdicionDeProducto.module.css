@@ -1,0 +1,41 @@
+.containerNewProduct {
+  background-color: var(--silver-sand);
+  min-height: 100vh;
+  position: relative;
+}
+.containerVolverAtras {
+  padding: 5px 10px;
+}
+.containerVolverAtras a {
+  color: #fff;
+}
+.editando,
+.subEditando   {
+  padding: 5px;
+}
+
+.itemForm input {
+  height: 40px;
+  width: 100%;
+}
+.itemForm textarea {
+  width: 100%;
+  resize: none;
+}
+
+.containerFormNewProd {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+}
+.containerCantidadUnidad {
+  margin: 0 auto;
+  width: 100%;
+  gap: 10%;
+  display: flex;
+}
+.containerCantidadUnidad input,
+.containerCantidadUnidad label {
+  width: 100%;
+}

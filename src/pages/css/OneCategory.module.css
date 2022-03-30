@@ -1,0 +1,18 @@
+.containerOneCategory {
+  background-color: var(--banana-mania);
+  min-height: 100vh;
+}
+.tituloOneCategory {
+  text-align: center;
+  padding-top: 20px;
+}
+.iconoCarrito {
+  position: fixed;
+  z-index: 10000;
+}
+.noHayProductos {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20vh;
+  text-align: center;
+}

@@ -1,0 +1,135 @@
+.containerGralCarrito {
+  min-height: 100vh;
+  background-color: var(--banana-mania);
+}
+.containerTituloYSubtitulo {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.tituloCarrito,
+.subtituloCarrito {
+  text-align: center;
+  text-shadow: 0 0 5px #fff;
+}
+.containerTabla {
+  display: block;
+  min-width: 300px;
+  overflow-x: auto;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  outline: 2px outset var(--light-sea-green);
+  box-shadow: 0 3px 10px 2px #000;
+}
+.tablaCarrito {
+  width: 100%;
+  white-space: nowrap;
+}
+.centrar {
+  text-align: center;
+}
+
+.containerGralTotal {
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 30px;
+  white-space: nowrap;
+}
+.containerTotal {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 1.1em;
+}
+
+.containerCarritoVacio {
+  background-color: var(--banana-mania);
+  min-height: 100vh;
+}
+.containerCarritoVacio p {
+  text-align: center;
+  font-size: 1.3em;
+  padding-top: 50px;
+}
+.containerImagenes {
+  position: relative;
+  width: 100%;
+}
+.imgCarrito {
+  min-width: 300px;
+  width: 70%;
+  height: 200px;
+  margin-right: 100px;
+  background: url(../../assets/imgs/carritoTriste.png) no-repeat center;
+  background-size: contain;
+  animation: carrito 4s;
+  animation-fill-mode: forwards;
+}
+.celdaSizeFixed {
+  min-height: 100px;
+}
+.containerBtn {
+  display: flex;
+  justify-content: center;
+}
+.containerBtn a:hover {
+  box-shadow: 0 2px 3px #000;
+  color: #fff;
+  transition: 0.2s;
+}
+.containerBtn a {
+  text-decoration: none;
+  padding: 0px 50px;
+  font-size: 1.5em;
+  color: #fff;
+  border: 2px outset var(--verde-whatsapp);
+  background-color: var(--verde-whatsapp);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.containerBtn button {
+  text-decoration: none;
+  padding: 0px 50px;
+  font-size: 1.5em;
+  color: #fff;
+  border: 2px outset var(--swamp-green);
+  background-color: var(--swamp-green);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.containerBtnVolverAlCarrito {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 750px;
+}
+.btnVolverAlCarrito {
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 5px 20px;
+  color: #fff;
+  border: 2px outset var(--verde-whatsapp);
+  background-color: var(--verde-whatsapp);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.btnVolverAlCarrito:hover {
+  box-shadow: 0 2px 3px #000;
+  transition: 0.2s;
+}
+.btnVolverAlCarrito a:hover {
+  color: #fff;
+}
+.btnVolverAlCarrito a {
+  text-decoration: none;
+  color: #fff;
+}
+.italic {
+  font-style: italic;
+  font-size: .9em;
+}
+
+@keyframes carrito {
+  100% {
+    transform: translate(30%);
+  }
+}

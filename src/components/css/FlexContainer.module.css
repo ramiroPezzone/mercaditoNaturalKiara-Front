@@ -1,0 +1,16 @@
+.flexContainer {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .flexContainer {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}

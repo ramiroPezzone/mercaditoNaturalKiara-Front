@@ -1,0 +1,46 @@
+.containerHomePage {
+  width: 100%;
+  height: calc(100vh - 105px);
+  background-color: var(--banana-mania);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 1.5vw;
+}
+.logoHomePage {
+  width: 80%;
+  height: 60vh;
+  background: url(../../assets/imgs/logo-kiara.png) no-repeat center;
+  background-size: contain;
+  max-width: 500px;
+  min-width: 300px;
+}
+.enlaceInstagram,
+.enlaceWhatsapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  color: #363435;
+}
+.enlaceInstagram:hover {
+  color: #a5016e;
+}
+.enlaceWhatsapp:hover {
+  color: var(--verde-whatsapp);
+}
+.containerLogoInstagram {
+  background: url(../../assets/imgs/logoInstagram.png) no-repeat center;
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+}
+.containerLogoWhatsapp {
+  background: url(../../assets/imgs/logoWathsapp.png) no-repeat center;
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+}

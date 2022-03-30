@@ -1,0 +1,46 @@
+footer {
+  background-color: none;
+}
+.containerBFFooter {
+  background-color: var(--banana-mania);
+}
+.subContainerFooter {
+  padding: 5px;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 0 10px 1px #000;
+  background-color: var(--swamp-green);
+}
+.containerFlexFooter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.containerFlexFooter:hover > p {
+  filter: drop-shadow(0 0 3px var(--pablo));
+  transition: 0.5s;
+}
+.containerFlexFooter:hover > .containerImg {
+  transition: 0.5s;
+  filter: grayscale(0) drop-shadow(0 0 5px #fff);
+}
+.subContainerFooter a {
+  text-decoration: none;
+  color: var(--pablo);
+}
+
+.pDelFooter {
+  padding: 0%;
+  margin: 0%;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  color: rgb(240, 240, 240);
+}
+.containerImg {
+  width: 40px;
+  height: 40px;
+  background: url(../../assets/imgs/logoPRFondoTransp.png) no-repeat center;
+  background-size: contain;
+  transition: 0.3s;
+}

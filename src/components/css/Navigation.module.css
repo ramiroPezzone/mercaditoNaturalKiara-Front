@@ -1,0 +1,34 @@
+.navPersonalizada {
+  box-shadow: 0px 6px 10px rgb(100, 100, 100);
+  background: var(--swamp-green);
+  border-radius: 0 0 20px 20px;
+  color: var(--banana-mania);
+  z-index: 500000;
+}
+.containerBGNavBar {
+  background-color: var(--banana-mania);
+}
+.lineaDivisora {
+  height: 1px;
+  width: 85%;
+  margin: 10px auto;
+  background-color: var(--banana-mania);
+}
+.optionAdmins {
+  margin-left: 70%;
+}
+.aOptionAdmin {
+  min-width: 65px;
+  white-space: nowrap;
+}
+.bg {
+  background-color: red;
+}
+@media (min-width: 992px) {
+  .lineaDivisora {
+    display: none;
+  }
+  .optionAdmins {
+    margin-left: initial;
+  }
+}

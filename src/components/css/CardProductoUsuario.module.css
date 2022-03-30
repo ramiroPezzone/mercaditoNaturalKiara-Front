@@ -1,0 +1,179 @@
+ .tituloProd {
+  text-align: center;
+}
+.cardContainer {
+  border: 2px outset #fff;
+  width: 18rem;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+.containerCard p {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3px;
+}
+.cardACtive {
+  box-shadow: 0 0 4px 1px var(--verde-whatsapp);
+}
+.lineaDivisoraCardConCarrito {
+  width: 100%;
+  height: 2px;
+  background-color: var(--pablo);
+}
+.containerSumarAlCarrito {
+  height: 50px;
+  background-color: rgb(204, 204, 204);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.restar,
+.sumar {
+  width: 35px;
+  height: 40px;
+  border: none;
+}
+.restar:hover,
+.sumar:hover {
+  background-color: var(--forest-green-web);
+  color: #fff;
+}
+.cantidadSeleccionada {
+  background-color: #fff;
+  text-align: center;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  border: none;
+}
+.quiero {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.btnAgregar {
+  color: #fff;
+  font-size: 1.1em;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid var(--verde-whatsapp);
+  background-color: var(--verde-whatsapp);
+  z-index: 1000;
+}
+.btnAgregar:enabled {
+  animation: resplandor 3s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes resplandor {
+  50% {
+    box-shadow: 0 0 5px 2px var(--verde-whatsapp);
+  }
+}
+.btnAgregar:disabled {
+  line-height: 40px;
+  border: none;
+  font-size: 1.1em;
+  border: 1px solid var(--verde-whatsapp);
+  background-color: var(--banana-mania);
+  color: var(--verde-whatsapp);
+}
+
+.signoMas {
+  position: absolute;
+  left: 33%;
+  top: 10px;
+  font-size: 2em;
+}
+.quitar {
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  transition: 0.2s;
+  text-shadow: 0 0 4px #000;
+}
+.quitar:hover {
+  box-shadow: 0 0 10px 3px var(--burnt-siena);
+  transition: 0.2s;
+}
+.hayProducto {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  background-color: var(--verde-whatsapp);
+}
+.inputDisabled {
+  text-align: center;
+  background-color: rgb(204, 204, 204);
+  color: rgb(104, 104, 104);
+  width: 55px;
+}
+.cantidadSeleccionada {
+  text-align: center;
+  width: 55px;
+  height: 40px;
+}
+.productoConfirmado {
+  width: 100%;
+  height: 40px;
+  background-color: var(--light-sea-green);
+}
+.btnQuitarProducto {
+  width: 100%;
+  height: 42px;
+  background-color: var(--burnt-siena);
+  border: 1px solid var(--burnt-siena);
+  color: #fff;
+}
+.btnQuitarProducto:disabled {
+  background-color: var(--banana-mania);
+  border: 1px solid var(--burnt-siena);
+  color: var(--burnt-siena);
+}
+.containerBtnsQuitarModificar {
+  display: flex;
+  flex-direction: row;
+}
+.sinProductoEnCarrito p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  background-color: var(--banana-mania);
+  border: 1px solid var(--light-sea-green);
+  color: var(--light-sea-green);
+}
+.containerInfoCarrito p {
+  margin: 0;
+  padding: 0;
+}
+.containerInfoCarrito {
+  text-align: center;
+  background-color: var(--light-sea-green);
+  text-shadow: 0 0 4px #000;
+  color: #fff;
+  font-size: 1.1em;
+  height: 42px;
+  line-height: 42px;
+  z-index: 1000;
+}
+
+.imgCard {
+  cursor: pointer;
+  width: 100%;
+  height: 158px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all .3s;
+}
+.imgCard:hover {
+  background-size: 150%;
+  transition: all .3s;
+}

@@ -1,0 +1,57 @@
+.centrar {
+  text-align: center;
+}
+.contenedorLinea p {
+  margin: 0;
+  padding: 0;
+}
+.contenedorLinea {
+  position: relative;
+}
+.lineaEliminada p {
+  margin: 0;
+  padding: 0;
+  color: rgb(105, 105, 105);
+}
+.lineaEliminada {
+  text-decoration: line-through;
+  color: rgb(105, 105, 105);
+}
+.lineaEliminada td {
+  vertical-align: middle;
+}
+.eliminarProd {
+  position: relative;
+}
+.contenedorLinea td {
+  vertical-align: middle;
+}
+.containerGralCantidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerGralCantidad button {
+  width: 35px;
+  height: 35px;
+}
+.btnEliminar {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.cruzRoja {
+  background: url(../../assets/imgs/cruzRojaEliminar.png) no-repeat center;
+  width: 22px;
+  height: 30px;
+  background-size: contain;
+}
+.cruzGris {
+  background: url(../../assets/imgs/cruzGrisEliminar.png) no-repeat center;
+  width: 22px;
+  height: 30px;
+  background-size: contain;
+  cursor: initial;
+}

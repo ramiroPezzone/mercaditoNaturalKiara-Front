@@ -1,13 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Sofia", cursive;
+}
+:root {
+  /* SCSS RGB */
+  --banana-mania: rgba(251, 235, 179, 1);
+  --banana-mania-faded: rgba(251, 235, 179, .85);
+  --green-haze: rgba(9, 164, 91, 1);
+  --mine-shaft: rgba(53, 52, 52, 1);
+  --swamp-green: rgba(160, 183, 141, 1);
+  --swamp-green-faded: rgba(160, 183, 141, .7);
+  --pablo: rgba(128, 120, 98, 1);
+  --indian-khaki: rgba(188, 172, 141, 1);
+  --clay-creek: rgba(140, 138, 91, 1);
+  --silver-sand: rgba(194, 201, 210, 1);
+  --mauve: rgba(250, 182, 250, 1);
+  --forest-green-web: rgba(5, 135, 57, 1);
+  --verde-whatsapp: rgba(41, 167, 26, 1);
+  --light-sea-green: rgba(0, 168, 160, 1);
+  --burnt-siena: rgba(224, 118, 75, 1);
+  --burnt-siena-2: rgb(182, 95, 60);
+  --red: rgb(255, 0, 0);
+  --red-faded: rgb(255, 0, 0, .5);
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
