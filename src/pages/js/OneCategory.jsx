@@ -46,7 +46,7 @@ export const OneCategory = () => {
         productosEnCarrito.length !== 0 || productosEnMemoria
             ? setCarritoActivo(true)
             : setCarritoActivo(false)
-    })
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     const [productosEnCarrito, setProductosEnCarrito] = useState([])
 

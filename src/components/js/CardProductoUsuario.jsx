@@ -18,7 +18,8 @@ export const CardProductoUsuario = (props) => {
             setCantidad(cantidadProds)
             setCantidadEnMemoria(cantidadProds)
         }
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
     // Sumar y restar cantidades
     const restar = () => {
         cantidad > 0
@@ -75,18 +76,18 @@ export const CardProductoUsuario = (props) => {
         if (cantidad !== 0) {
             localStorage.setItem(props.id, JSON.stringify(productoAAgregar))
         }
-    }, [modificacionEstadoCarrito])
+    }, [modificacionEstadoCarrito, props.id, productoAAgregar, cantidad])
 
     useEffect(() => {
         productoAgregado
             && props.cambioDeEstadoCarrito()
-    }, [productoAgregado])
+    }, [productoAgregado, props])
 
     const stylesImg = {
         backgroundImage: `url("${props.img}")`
     }
 
-    
+
     return (
         <Card
             className={

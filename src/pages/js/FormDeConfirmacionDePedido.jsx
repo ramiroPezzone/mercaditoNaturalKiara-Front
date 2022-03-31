@@ -75,7 +75,7 @@ export const FormDeConfirmacionDePedido = (props) => {
   useEffect(() => {
     if (faltaNombre === false && faltaDireccion === false)
       setPedidoConfirmado(true)
-  })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const seguirEditando = () => {
     setPedidoConfirmado(false)
@@ -230,6 +230,7 @@ export const FormDeConfirmacionDePedido = (props) => {
                 <a
                   href={hrefFinal}
                   target='_blank'
+                  rel="noopener noreferrer"
                   className={styles.enlaceEnviarPorWhatsapp}
                 >
                   <div className={styles.itemsBtnEnviarPedido}>

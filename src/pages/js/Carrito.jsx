@@ -31,7 +31,6 @@ export const Carrito = () => {
   // 
 
   const [valoresEnMemoriaSumados, setValoresEnMemoriaSumados] = useState([])
-  const [cambioEnCantidad, setCambioEnCantidad] = useState(0)
 
   // Sumando los valores que vienen del Array del LocalStorage
   useEffect(() => {
@@ -50,16 +49,11 @@ export const Carrito = () => {
   }
   // 
 
-  const [restarProductoQuitado, setRestarProductoQuitado] = useState(0)
   const restarAlTotal = (restarAlTotal) => {
     setValoresEnMemoriaSumados(valoresEnMemoriaSumados - restarAlTotal)
   }
 
   const [confirmacionDePedido, setConfirmacionDePedido] = useState(false)
-
-  const pedidoConfirmado = () => {
-    setConfirmacionDePedido(!confirmacionDePedido)
-  }
 
   useEffect(() => {
     setConfirmacionDePedido(confirmacionDePedido)

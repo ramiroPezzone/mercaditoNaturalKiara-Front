@@ -55,7 +55,7 @@ export const ProductosUsuarios = () => {
         productosEnCarrito.length !== 0 || productosEnMemoria
             ? setCarritoActivo(true)
             : setCarritoActivo(false)
-    }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [productosEnCarrito, productosEnMemoria]) // eslint-disable-line react-hooks/exhaustive-deps
 
     if (productos.length === 0 && cargaCompleta === false) {
         return (

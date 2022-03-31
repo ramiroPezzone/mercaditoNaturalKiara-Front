@@ -14,7 +14,7 @@ export const AdminsPage = () => {
 
     useEffect(() => {
         (logSession === 'ok' || logLocal === 'ok') && setLogueado(true)
-    }, [avisoDeInicio, avisoDeCierre])
+    }, [avisoDeInicio, avisoDeCierre]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const inicioIsTrue = () => {
         setAvisoDeInicio(!avisoDeInicio)

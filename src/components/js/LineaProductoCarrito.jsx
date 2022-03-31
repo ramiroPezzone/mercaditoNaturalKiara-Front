@@ -25,12 +25,12 @@ const LineaProductoCarrito = (props) => {
         productosParseados.quantity = cantidad
         const productosModificadosAString = JSON.stringify(productosParseados)
         localStorage.setItem(props.id, productosModificadosAString)
-    }, [cantidad])
+    }, [cantidad]) // eslint-disable-line react-hooks/exhaustive-deps
     // 
 
     useEffect(() => {
         setCostoTotal(props.price * cantidad)
-    }, [cantidad])
+    }, [cantidad]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const [productoEliminado, setProductoEliminado] = useState(false)
 

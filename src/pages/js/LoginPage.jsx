@@ -26,7 +26,7 @@ export const LoginPage = (props) => {
             }
         })();
         return () => isSubscribed = false
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const valorInicial = {
         nameInput: "",
@@ -93,7 +93,7 @@ export const LoginPage = (props) => {
         if (logOk === true) {
             props.avisoDeInicio()
         }
-    }, [logOk])
+    }, [logOk]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         // Si NO selecciona "recordarme"
@@ -105,7 +105,7 @@ export const LoginPage = (props) => {
         if (logOk === true && recordarme === true) {
             localStorage.setItem('localLog', 'ok')
         }
-    }, [logOk])
+    }, [logOk]) // eslint-disable-line react-hooks/exhaustive-deps
 
 
     return (
