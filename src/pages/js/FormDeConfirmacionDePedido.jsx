@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../css/FormDeConfirmacionDePedido.module.css'
 import { Link } from "react-router-dom";
+import { Gracias } from './Gracias';
 
 export const FormDeConfirmacionDePedido = (props) => {
   const URIWhatsapp = 'https://api.whatsapp.com/send/'
@@ -83,8 +84,16 @@ export const FormDeConfirmacionDePedido = (props) => {
     setFaltaDireccion('')
   }
 
+  const [agradecimiento, setAgradecimiento] = useState(false)
   const pedidoEnviado = () => {
     localStorage.clear()
+    setAgradecimiento(true)
+  }
+
+  if (agradecimiento === true) {
+    return (
+      <Gracias />
+    )
   }
 
   return (
@@ -177,7 +186,7 @@ export const FormDeConfirmacionDePedido = (props) => {
             }
             title='Confirmación de datos'
           >
-            <div className={styles.containerTildeOk}/>
+            <div className={styles.containerTildeOk} />
           </button>
         </div>
       </form>
