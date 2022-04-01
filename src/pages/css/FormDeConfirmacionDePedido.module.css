@@ -11,6 +11,7 @@ h4 {
   max-width: 500px;
 }
 form {
+  width: 85vw;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -177,4 +178,3 @@ form textarea {
   background: url(../../assets/imgs/ok.png) no-repeat center;
   background-size: 100%;
 }
-
