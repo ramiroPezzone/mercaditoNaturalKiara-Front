@@ -75,7 +75,7 @@ export const FormDeConfirmacionDePedido = (props) => {
   useEffect(() => {
     if (faltaNombre === false && faltaDireccion === false)
       setPedidoConfirmado(true)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [faltaNombre, faltaDireccion])
 
   const seguirEditando = () => {
     setPedidoConfirmado(false)
@@ -234,7 +234,10 @@ export const FormDeConfirmacionDePedido = (props) => {
                   className={styles.enlaceEnviarPorWhatsapp}
                 >
                   <div className={styles.itemsBtnEnviarPedido}>
-                    <div className={styles.imgWhatsapp} />
+                    <input
+                      type='button'
+                      className={styles.imgWhatsapp}
+                      autoFocus />
                     Enviar
                   </div>
                 </a>

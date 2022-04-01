@@ -19,6 +19,7 @@ export const CardProductoUsuario = (props) => {
             setCantidadEnMemoria(cantidadProds)
         }
     }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    // localStorage.clear()
 
     // Sumar y restar cantidades
     const restar = () => {
@@ -40,6 +41,7 @@ export const CardProductoUsuario = (props) => {
         setCantidad(cantidad + 1)
         setCantidadModificada(true)
     }
+
     const modificarCantidad = (e) => {
         var cantIngresada = e.target.value
         setCantidad(cantIngresada)
@@ -73,7 +75,7 @@ export const CardProductoUsuario = (props) => {
         props.cambioDeEstadoCarrito(1)
     }
     useEffect(() => {
-        if (cantidad !== 0) {
+        if (cantidad !== 0 && productoAgregado === true) {
             localStorage.setItem(props.id, JSON.stringify(productoAAgregar))
         }
     }, [modificacionEstadoCarrito, props.id, productoAAgregar, cantidad])

@@ -55,7 +55,7 @@ export const ProductosUsuarios = () => {
         productosEnCarrito.length !== 0 || productosEnMemoria
             ? setCarritoActivo(true)
             : setCarritoActivo(false)
-    }, [productosEnCarrito, productosEnMemoria]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [productosEnCarrito, productosEnMemoria])
 
     if (productos.length === 0 && cargaCompleta === false) {
         return (
@@ -70,8 +70,6 @@ export const ProductosUsuarios = () => {
                 <h3>Aún no hay productos cargados</h3>
             </div>)
     }
-
-
 
     return (
         <div className={styles.containerProductosUsuarios}>

@@ -59,6 +59,7 @@ export const Carrito = () => {
     setConfirmacionDePedido(confirmacionDePedido)
   }, [confirmacionDePedido])
 
+  // localStorage.clear()
   if (productosEnMemoria.length === 0) {
     return (
       <div className={styles.containerCarritoVacio}>

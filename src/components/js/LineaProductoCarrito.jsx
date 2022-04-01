@@ -18,19 +18,17 @@ const LineaProductoCarrito = (props) => {
     }
 
     // Lógica de actualización de cantidades
-
     useEffect(() => {
         const productosEnMemoria = localStorage.getItem(props.id)
         const productosParseados = JSON.parse(productosEnMemoria)
         productosParseados.quantity = cantidad
         const productosModificadosAString = JSON.stringify(productosParseados)
         localStorage.setItem(props.id, productosModificadosAString)
-    }, [cantidad]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [cantidad])
     // 
-
     useEffect(() => {
         setCostoTotal(props.price * cantidad)
-    }, [cantidad]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [cantidad, props.price])
 
     const [productoEliminado, setProductoEliminado] = useState(false)
 

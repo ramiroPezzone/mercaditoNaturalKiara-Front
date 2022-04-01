@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Sofia", cursive;
+  scroll-behavior: smooth;
 }
 :root {
   /* SCSS RGB */
