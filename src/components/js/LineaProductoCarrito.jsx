@@ -24,7 +24,7 @@ const LineaProductoCarrito = (props) => {
         productosParseados.quantity = cantidad
         const productosModificadosAString = JSON.stringify(productosParseados)
         localStorage.setItem(props.id, productosModificadosAString)
-    }, [cantidad])
+    }, [cantidad, props.id])
     // 
     useEffect(() => {
         setCostoTotal(props.price * cantidad)

@@ -59,16 +59,22 @@ export const ProductosUsuarios = () => {
 
     if (productos.length === 0 && cargaCompleta === false) {
         return (
-            <div className={styles.containerGraloading}>
-                <Loading />
-            </div>)
+            <div className={styles.containerProductosUsuarios}>
+                <div className={styles.containerGraloading}>
+                    <Loading />
+                </div>
+            </div>
+        )
     }
 
     if (productos.length === 0 && cargaCompleta === true) {
         return (
-            <div className={styles.containerGraloading}>
-                <h3>Aún no hay productos cargados</h3>
-            </div>)
+            <div className={styles.containerProductosUsuarios}>
+                <div className={styles.containerGraloading}>
+                    <h3>Aún no hay productos cargados</h3>
+                </div>
+            </div>
+        )
     }
 
     return (

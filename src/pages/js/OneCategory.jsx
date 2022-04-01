@@ -28,8 +28,8 @@ export const OneCategory = () => {
         (async () => {
             const categoryRes = await axios.get(`${URI.productosUsuarios}/${param.cat}`)
             setProdsDeCat(categoryRes.data)
+            setCargaCompleta(true)
         })()
-        setCargaCompleta(true)
     }, [param])
 
     const [productosEnMemoria, setProductosEnMemoria] = useState(false)
@@ -59,7 +59,6 @@ export const OneCategory = () => {
             setProductosEnCarrito([...productosEnCarrito, 1])
         }
     }
-
 
     if (prodsDeCat.length === 0 && cargaCompleta === false) {
         return (
