@@ -5,6 +5,7 @@ export const HomePage = () => {
   useEffect(() => {
     document.title = `Mercadito Natural Kiara`;
   });
+
   return (
     <>
       <div className={styles.containerHomePage}>

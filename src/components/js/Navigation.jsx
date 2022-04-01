@@ -40,13 +40,8 @@ export const Navigation = () => {
                                     </div>
                                 ))
                             }
-                            {/* <NavDropdown.Divider /> */}
                         </NavDropdown>
                         <Nav.Link as={Link} to='/carrito'>Carrito</Nav.Link>
-                    </Nav>
-                    <div className={styles.lineaDivisora} />
-                    <Nav className={`me-5 ${styles.optionAdmins}`}>
-                        <Nav.Link as={Link} to='/admins' className={styles.aOptionAdmin}>Solo admins</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
