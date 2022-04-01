@@ -173,7 +173,7 @@ export const FormDeConfirmacionDePedido = (props) => {
             }
             title='Confirmación de datos'
           >
-            🗸
+            <div className={styles.containerTildeOk}/>
           </button>
         </div>
       </form>

@@ -134,7 +134,7 @@ export const Carrito = () => {
               className={styles.btnCheck}
               title='Confirmación de pedido'
             >
-              🗸
+              Ok
             </Link>)
             : (<button
               to={'/confirmacionPedido'}
@@ -142,7 +142,7 @@ export const Carrito = () => {
               title='Confirmación de pedido'
               disabled
             >
-              🗸
+              Ok
             </button>)
         }
       </div>
