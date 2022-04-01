@@ -83,6 +83,10 @@ export const FormDeConfirmacionDePedido = (props) => {
     setFaltaDireccion('')
   }
 
+  const pedidoEnviado = () => {
+    localStorage.clear()
+  }
+
   return (
     <div className={styles.containerForm}>
       <div className={styles.containerBtnVolverAlCarrito}>
@@ -232,6 +236,7 @@ export const FormDeConfirmacionDePedido = (props) => {
                   target='_blank'
                   rel="noopener noreferrer"
                   className={styles.enlaceEnviarPorWhatsapp}
+                  onClick={pedidoEnviado}
                 >
                   <div className={styles.itemsBtnEnviarPedido}>
                     <input
