@@ -62,17 +62,22 @@ export const OneCategory = () => {
 
     if (prodsDeCat.length === 0 && cargaCompleta === false) {
         return (
-            <div className={styles.containerGraloading}>
-                <Loading />
-            </div>)
+            <div className={styles.containerOneCategory}>
+                <div className={styles.containerGraloading}>
+                    <Loading />
+                </div>
+            </div>
+        )
     }
 
     if (prodsDeCat.length === 0 && cargaCompleta === true) {
         return (
-            <div className={styles.containerGraloading}>
-                <div className={styles.containerOneCategory}>
-                    <h5 className={styles.tituloOneCategory}>Categoría: {categorySelected}</h5>
-                    <h5 className={styles.noHayProductos}>No hay productos disponibles para esta categoría</h5>
+            <div className={styles.containerOneCategory}>
+                <div className={styles.containerGraloading}>
+                    <div className={styles.containerOneCategory}>
+                        <h5 className={styles.tituloOneCategory}>Categoría: {categorySelected}</h5>
+                        <h5 className={styles.noHayProductos}>No hay productos disponibles para esta categoría</h5>
+                    </div>
                 </div>
             </div>
         )
