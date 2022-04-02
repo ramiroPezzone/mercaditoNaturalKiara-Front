@@ -77,7 +77,9 @@ export const ProductosUsuarios = () => {
 
     return (
         <div className={styles.containerProductosUsuarios}>
-            <h2>Todo lo que buscás</h2>
+            <h2>Kiara</h2>
+            <h3>Tu mercadito Natural</h3>
+            <h4>Nos especializamos en productos para celíacos</h4>
             <FlexContainer>
                 {
                     productos.map((prod) => (
