@@ -10,8 +10,6 @@ const URI = require('../../URIs')
 
 export const ProductosUsuarios = () => {
 
-    const URIImage = URI.imagenes
-
     useEffect(() => {
         document.title = `Todo rico y sano`;
     });
@@ -87,7 +85,7 @@ export const ProductosUsuarios = () => {
                             key={prod._id}
                             id={prod._id}
                             name={prod.name}
-                            img={`${URIImage}${prod.image}`}
+                            img={prod.image}
                             description={prod.description}
                             price={prod.price}
                             unity={prod.unity}
