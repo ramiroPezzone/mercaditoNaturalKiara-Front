@@ -1,5 +1,5 @@
 .containerGralCarrito {
-  min-height: 100vh;
+  min-height: calc(100vh - 108.4px);
   background-color: var(--banana-mania);
 }
 .containerTituloYSubtitulo {
@@ -44,7 +44,7 @@
 
 .containerCarritoVacio {
   background-color: var(--banana-mania);
-  min-height: 100vh;
+  min-height: calc(100vh - 108.4px);
 }
 .containerCarritoVacio p {
   text-align: center;

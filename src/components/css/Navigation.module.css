@@ -8,6 +8,12 @@
 .containerBGNavBar {
   background-color: var(--banana-mania);
 }
+.tituloNavbar {
+  font-size: 1.6em;
+}
+.optionsNavbar {
+  font-size: 1.1em;
+}
 .lineaDivisora {
   height: 1px;
   width: 85%;

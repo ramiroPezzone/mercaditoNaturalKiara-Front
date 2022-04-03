@@ -3,6 +3,7 @@ footer {
 }
 .containerBFFooter {
   background-color: var(--banana-mania);
+  position: relative;
 }
 .subContainerFooter {
   padding: 5px;

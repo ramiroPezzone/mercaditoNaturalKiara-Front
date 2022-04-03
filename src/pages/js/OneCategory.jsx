@@ -8,7 +8,6 @@ import IconoCarrito from "../../components/js/IconoCarrito";
 import { FlexContainer } from '../../components/js/FlexContainer';
 import { Loading } from '../../components/js/Loading';
 const URI = require('../../URIs')
-const URIImage = URI.imagenes
 
 export const OneCategory = () => {
 
@@ -94,7 +93,7 @@ export const OneCategory = () => {
                             key={prod._id}
                             id={prod._id}
                             name={prod.name}
-                            img={`${URIImage}${prod.image}`}
+                            img={prod.image}
                             description={prod.description}
                             price={prod.price}
                             unity={prod.unity}
