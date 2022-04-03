@@ -1,6 +1,6 @@
 .containerHomePage {
   width: 100%;
-  height: calc(100vh - 108.4px);
+  height: calc(100vh - 107.4px);
   background-color: var(--banana-mania);
   display: flex;
   justify-content: center;
