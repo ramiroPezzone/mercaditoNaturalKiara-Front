@@ -76,7 +76,7 @@ export const Carrito = () => {
     <div className={styles.containerGralCarrito}>
       <div className={styles.containerBtnVolverAlCarrito}>
         <button className={styles.btnVolverAlCarrito}>
-          <Link to='/productos'>
+          <Link to='/productos/name'>
             🢦 Volver a productos
           </Link>
         </button>
