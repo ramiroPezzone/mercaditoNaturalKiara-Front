@@ -98,7 +98,8 @@ export const CardProductoUsuario = (props) => {
                     : `${styles.cardContainer}`
             }>
             <div className={styles.imgCard}
-                style={stylesImg}></div>
+                style={stylesImg}>
+            </div>
             <Card.Body className={styles.containerCard}>
                 <Card.Title className={styles.tituloProd}>{props.name}</Card.Title>
                 <hr />

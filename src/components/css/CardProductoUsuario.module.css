@@ -170,7 +170,7 @@ input[type="number"] {
   height: 158px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   transition: all .3s;
 }
 .imgCard:hover {
