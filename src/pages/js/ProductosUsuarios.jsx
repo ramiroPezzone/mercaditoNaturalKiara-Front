@@ -18,7 +18,6 @@ export const ProductosUsuarios = () => {
 
     const [cargaCompleta, setCargaCompleta] = useState(false)
 
-
     useEffect(() => {
         (async () => {
             const res = await axios.get(URI.productosUsuarios);

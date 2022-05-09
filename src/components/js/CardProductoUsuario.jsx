@@ -60,6 +60,7 @@ export const CardProductoUsuario = (props) => {
     const [productoAAgregar, setProductoAAgregar] = useState({})
     const [productoAgregado, setProductoAgregado] = useState(false)
     const [modificacionEstadoCarrito, setModificacionEstadoCarrito] = useState(false)
+
     const agregar = () => {
         var prodAAgregar = {
             id: props.id,
@@ -78,7 +79,7 @@ export const CardProductoUsuario = (props) => {
         if (cantidad !== 0 && productoAgregado === true) {
             localStorage.setItem(props.id, JSON.stringify(productoAAgregar))
         }
-    }, [modificacionEstadoCarrito, props.id, productoAAgregar, cantidad])
+    }, [modificacionEstadoCarrito, props.id, productoAAgregar, cantidad]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         productoAgregado
@@ -89,6 +90,10 @@ export const CardProductoUsuario = (props) => {
         backgroundImage: `url("${props.img}")`
     }
 
+    const openImg = () => {
+        props.mostrarImgLarge(props.img)
+    }
+
 
     return (
         <Card
@@ -97,9 +102,11 @@ export const CardProductoUsuario = (props) => {
                     ? `${styles.cardContainer} ${styles.cardACtive}`
                     : `${styles.cardContainer}`
             }>
-            <div className={styles.imgCard}
-                style={stylesImg}>
-            </div>
+            <a href={props.img} target="_blank" rel="noreferrer noopener">
+                <div className={styles.imgCard}
+                    style={stylesImg} onClick={openImg}>
+                </div>
+            </a>
             <Card.Body className={styles.containerCard}>
                 <Card.Title className={styles.tituloProd}>{props.name}</Card.Title>
                 <hr />

@@ -4,7 +4,7 @@ export const Loading = () => {
     return (
         <div className={styles.containerLoading}>
             <div className={styles.loading}>
-                <h3>Loading...</h3>
+                <h3>Cargando...</h3>
             </div>
         </div>
     )
