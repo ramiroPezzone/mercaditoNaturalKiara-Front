@@ -1,14 +1,14 @@
 .containerIcoCarritoVacio {
   position: fixed;
   top: 80px;
-  right: 4vw;
+  right: 2vw;
   background-color: var(--swamp-green);
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px  ;
   border-radius: 100%;
   border: 1px solid var(--banana-mania);
   filter: opacity(0.5);
-  transition: .5s;
+  transition: 0.5s;
 }
 .containerIcoCarritoLleno {
   position: fixed;
@@ -19,7 +19,7 @@
   height: 55px;
   border-radius: 100%;
   box-shadow: 0 0 10px 8px #fff;
-  transition: .5s;
+  transition: 0.5s;
   z-index: 10000;
 }
 .flexCarrito {
@@ -48,8 +48,16 @@
 }
 
 @keyframes productosEnCarrito {
-  5% {transform: rotate(-10deg)}
-  10% {transform: rotate(10deg)}
-  15% {transform: rotate(-10deg)}
-  20% {transform: rotate(0deg)}
+  5% {
+    transform: rotate(-10deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  15% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
 }

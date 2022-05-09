@@ -1,0 +1,7 @@
+.containerProductosUsuarios {
+    background-color: var(--banana-mania);
+    min-height: calc(100vh - 108.4px);
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center;
+  }

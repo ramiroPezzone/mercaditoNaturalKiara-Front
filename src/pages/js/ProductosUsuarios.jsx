@@ -6,6 +6,7 @@ import { CardProductoUsuario } from '../../components/js/CardProductoUsuario';
 import IconoCarrito from '../../components/js/IconoCarrito';
 import { FlexContainer } from '../../components/js/FlexContainer';
 import { Loading } from '../../components/js/Loading';
+import BtnTop from '../../components/js/BtnTop';
 const URI = require('../../URIs')
 
 export const ProductosUsuarios = () => {
@@ -76,9 +77,6 @@ export const ProductosUsuarios = () => {
 
     return (
         <div className={styles.containerProductosUsuarios}>
-            <h2>Kiara</h2>
-            <h3>Tu mercadito Natural</h3>
-            <h4>Nos especializamos en productos para celíacos</h4>
             <FlexContainer>
                 {
                     productos.map((prod) => (
@@ -100,6 +98,7 @@ export const ProductosUsuarios = () => {
                 estadoCarrito={carritoActivo}
                 className={stylesCarrito.iconoCarrito}
             />
+            <BtnTop />
         </div>
     )
 }
