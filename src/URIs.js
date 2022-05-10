@@ -2,6 +2,7 @@
 const URIRaiz = "https://mercadito-natural-kiara.herokuapp.com";
 const URIs = {
   admins: `${URIRaiz}/admins`,
+  ofertas: `${URIRaiz}/ofertas`,
   productosAdmins: `${URIRaiz}/admins/productos`,
   categorys: `${URIRaiz}/admins/categorys`,
   imagenes: `${URIRaiz}/imgs/`,
