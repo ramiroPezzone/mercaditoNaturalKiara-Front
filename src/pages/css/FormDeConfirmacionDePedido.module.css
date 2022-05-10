@@ -1,5 +1,5 @@
 .containerForm {
-  /* min-height: 85vh; */
+  min-height: 85vh;
   background-color: var(--banana-mania);
   padding-top: 30px;
 }

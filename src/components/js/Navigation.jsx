@@ -41,11 +41,12 @@ export const Navigation = () => {
                                     ))
                                 }
                             </NavDropdown>
+                            <Nav.Link as={Link} to='/ofertas' className={styles.optionsNavbar}><b> Ver ofertas</b></Nav.Link>
                             <Nav.Link as={Link} to='/carrito' className={styles.optionsNavbar}>Carrito</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </nav>
+        </nav >
     )
 }

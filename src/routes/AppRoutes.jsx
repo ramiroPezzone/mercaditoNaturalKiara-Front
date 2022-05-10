@@ -4,6 +4,7 @@ import { Navigation } from '../components/js/Navigation'
 import { Carrito } from '../pages/js/Carrito'
 import { FormDeConfirmacionDePedido } from '../pages/js/FormDeConfirmacionDePedido'
 import { HomePage } from '../pages/js/HomePage'
+import Ofertas from '../pages/js/Ofertas'
 import { OneCategory } from '../pages/js/OneCategory'
 import { ProductosUsuarios } from '../pages/js/ProductosUsuarios'
 
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
                 <Route exact path='/' element={<HomePage />} />
                 <Route exact path='/category/:cat' element={<OneCategory />} />
                 <Route exact path='/productos' element={<ProductosUsuarios />} />
+                <Route exact path='/ofertas' element={<Ofertas />} />
                 <Route exact path='/carrito' element={<Carrito />} />
                 <Route exact path='/confirmacionPedido' element={<FormDeConfirmacionDePedido />} />
             </Routes>

@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react'
-import axios from "axios";
+import React, { useState, useEffect } from 'react'
+import BtnTop from '../../components/js/BtnTop'
+import { CardProductoUsuario } from '../../components/js/CardProductoUsuario'
+import { FlexContainer } from '../../components/js/FlexContainer'
+import IconoCarrito from '../../components/js/IconoCarrito'
+import { Loading } from '../../components/js/Loading'
 import styles from '../css/ProductosUsuarios.module.css'
 import stylesCarrito from "../../components/css/IconoCarrito.module.css";
-import { CardProductoUsuario } from '../../components/js/CardProductoUsuario';
-import IconoCarrito from '../../components/js/IconoCarrito';
-import { FlexContainer } from '../../components/js/FlexContainer';
-import { Loading } from '../../components/js/Loading';
-import BtnTop from '../../components/js/BtnTop';
+const axios = require('axios')
 const URI = require('../../URIs')
 
-export const ProductosUsuarios = () => {
+const Ofertas = () => {
     useEffect(() => {
         document.title = `Todo rico y sano`;
     });
@@ -20,7 +20,7 @@ export const ProductosUsuarios = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await axios.get(URI.productosUsuarios);
+            const res = await axios.get(URI.ofertas);
             setProductos(res.data);
             setCargaCompleta(true)
         })();
@@ -68,7 +68,7 @@ export const ProductosUsuarios = () => {
         return (
             <div className={styles.containerProductosUsuarios}>
                 <div className={styles.containerGraloading}>
-                    <h3>Aún no hay productos cargados</h3>
+                    <h3>Hoy no tenemos productos en oferta, pero volvé pronto a revisar que estamos trabajando para brindarles las mejores!</h3>
                 </div>
             </div>
         )
@@ -79,8 +79,7 @@ export const ProductosUsuarios = () => {
             <div className={styles.containerProductosUsuarios}>
                 <h2>Kiara</h2>
                 <h3>Tu mercadito Natural</h3>
-                <h4>Nos especializamos en productos para celíacos</h4>
-
+                <h3>Productos en oferta!</h3>
                 <FlexContainer>
                     {
                         productos.map((prod) => (
@@ -105,5 +104,8 @@ export const ProductosUsuarios = () => {
                 <BtnTop />
             </div>
         </div>
+
     )
 }
+
+export default Ofertas

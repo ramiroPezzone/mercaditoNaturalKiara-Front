@@ -1,12 +1,11 @@
 .containerIcoCarritoVacio {
   position: fixed;
   top: 80px;
-  right: -5vw;
+  right: -100px;
   background-color: var(--swamp-green);
   width: 60px;
   height: 60px;
   border-radius: 100%;
-  /* border: 1px solid var(--banana-mania); */
   outline: 3px outset var(--forest-green-web);
   filter: opacity(0.5);
   transition: 0.5s;
