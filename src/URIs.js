@@ -1,4 +1,5 @@
-const URIRaiz = "http://localhost:8080";
+// const URIRaiz = "http://localhost:8080";
+const URIRaiz = "https://mercadito-natural-kiara.herokuapp.com";
 const URIs = {
   admins: `${URIRaiz}/admins`,
   productosAdmins: `${URIRaiz}/admins/productos`,
