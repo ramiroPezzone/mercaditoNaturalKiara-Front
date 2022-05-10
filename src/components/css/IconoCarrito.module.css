@@ -1,12 +1,13 @@
 .containerIcoCarritoVacio {
   position: fixed;
   top: 80px;
-  right: 2vw;
+  right: -5vw;
   background-color: var(--swamp-green);
   width: 60px;
-  height: 60px  ;
+  height: 60px;
   border-radius: 100%;
-  border: 1px solid var(--banana-mania);
+  /* border: 1px solid var(--banana-mania); */
+  outline: 3px outset var(--forest-green-web);
   filter: opacity(0.5);
   transition: 0.5s;
   z-index: 10000;
@@ -14,13 +15,14 @@
 .containerIcoCarritoLleno {
   position: fixed;
   top: 80px;
-  right: 4vw;
+  right: 2vw;
   background-color: var(--swamp-green);
   width: 55px;
   height: 55px;
   border-radius: 100%;
   box-shadow: 0 0 10px 8px #fff;
   transition: 0.5s;
+  outline: 3px outset var(--forest-green-web);
   z-index: 10000;
 }
 .flexCarrito {
