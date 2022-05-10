@@ -26,7 +26,7 @@ export const Navigation = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to='/productos/name' className={styles.optionsNavbar}>Productos</Nav.Link>
+                            <Nav.Link as={Link} to='/productos' className={styles.optionsNavbar}>Productos</Nav.Link>
                             <NavDropdown title="Categorías" id="collasible-nav-dropdown" className={`${styles.optionsNavbar}`}>
                                 {
                                     categorys.map(cat => (

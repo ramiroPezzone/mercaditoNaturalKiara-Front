@@ -9,6 +9,7 @@
   border: 1px solid var(--banana-mania);
   filter: opacity(0.5);
   transition: 0.5s;
+  z-index: 10000;
 }
 .containerIcoCarritoLleno {
   position: fixed;

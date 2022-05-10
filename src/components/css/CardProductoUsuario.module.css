@@ -173,7 +173,7 @@ input[type="number"] {
   background-size: cover;
   transition: all .3s;
 }
-.imgCard:hover {
+/* .imgCard:hover {
   background-size: 150%;
   transition: all .3s;
-}
+} */

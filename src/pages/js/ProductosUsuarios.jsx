@@ -9,8 +9,7 @@ import { Loading } from '../../components/js/Loading';
 import BtnTop from '../../components/js/BtnTop';
 const URI = require('../../URIs')
 
-export const ProductosUsuarios = () => {
-
+export const ProductosUsuarios = ({ order, sort }) => {
     useEffect(() => {
         document.title = `Todo rico y sano`;
     });
@@ -77,28 +76,34 @@ export const ProductosUsuarios = () => {
 
     return (
         <div className={styles.containerProductosUsuarios}>
-            <FlexContainer>
-                {
-                    productos.map((prod) => (
-                        <CardProductoUsuario
-                            key={prod._id}
-                            id={prod._id}
-                            name={prod.name}
-                            img={prod.image}
-                            description={prod.description}
-                            price={prod.price}
-                            unity={prod.unity}
-                            categorys={prod.categorys}
-                            cambioDeEstadoCarrito={cambioDeEstadoCarrito}
-                        />
-                    ))
-                }
-            </FlexContainer>
-            <IconoCarrito
-                estadoCarrito={carritoActivo}
-                className={stylesCarrito.iconoCarrito}
-            />
-            <BtnTop />
+            <div className={styles.containerProductosUsuarios}>
+                <h2>Kiara</h2>
+                <h3>Tu mercadito Natural</h3>
+                <h4>Nos especializamos en productos para celíacos</h4>
+
+                <FlexContainer>
+                    {
+                        productos.map((prod) => (
+                            <CardProductoUsuario
+                                key={prod._id}
+                                id={prod._id}
+                                name={prod.name}
+                                img={prod.image}
+                                description={prod.description}
+                                price={prod.price}
+                                unity={prod.unity}
+                                categorys={prod.categorys}
+                                cambioDeEstadoCarrito={cambioDeEstadoCarrito}
+                            />
+                        ))
+                    }
+                </FlexContainer>
+                <IconoCarrito
+                    estadoCarrito={carritoActivo}
+                    className={stylesCarrito.iconoCarrito}
+                />
+                <BtnTop />
+            </div>
         </div>
     )
 }

@@ -90,11 +90,6 @@ export const CardProductoUsuario = (props) => {
         backgroundImage: `url("${props.img}")`
     }
 
-    const openImg = () => {
-        props.mostrarImgLarge(props.img)
-    }
-
-
     return (
         <Card
             className={
@@ -104,7 +99,7 @@ export const CardProductoUsuario = (props) => {
             }>
             <a href={props.img} target="_blank" rel="noreferrer noopener">
                 <div className={styles.imgCard}
-                    style={stylesImg} onClick={openImg}>
+                    style={stylesImg}>
                 </div>
             </a>
             <Card.Body className={styles.containerCard}>
