@@ -4,11 +4,14 @@ import styles from '../css/CardProductoUsuario.module.css'
 
 export const CardProductoUsuario = (props) => {
 
+
+
     // Controles de botones sumar y restar y efecto de input disabled
     const [cantidad, setCantidad] = useState(0)
     const [cantidadEnMemoria, setCantidadEnMemoria] = useState(0)
     const [classDisabled, setClassDisabled] = useState(false)
     const [cantidadModificada, setCantidadModificada] = useState(false)
+    const [infoHidden, setInfoHidden] = useState(true)
 
     useEffect(() => {
         if (localStorage.getItem(props.id)) {
@@ -90,87 +93,117 @@ export const CardProductoUsuario = (props) => {
         backgroundImage: `url("${props.img}")`
     }
 
+    const showInfo = () => {
+        setInfoHidden(!infoHidden)
+    }
+
     return (
-        <Card
-            className={
-                productoAgregado || cantidadEnMemoria
-                    ? `${styles.cardContainer} ${styles.cardACtive}`
-                    : `${styles.cardContainer}`
-            }>
-            <a href={props.img} target="_blank" rel="noreferrer noopener">
-                <div className={styles.imgCard}
-                    style={stylesImg}>
-                </div>
-            </a>
-            <Card.Body className={styles.containerCard}>
-                <Card.Title className={styles.tituloProd}>{props.name}</Card.Title>
-                <hr />
-                <Card.Text>
-                    {props.description}
-                </Card.Text>
-                <div>
-                    {
-                        props.categorys.map(cat => (
-                            <p key={cat._id}>-{cat.value}</p>
-                        ))
-                    }
-                </div>
-                <Card.Text>
-                    $ {props.price}
-                </Card.Text>
-            </Card.Body>
-            <div className={styles.lineaDivisoraCardConCarrito} />
-            <p className={styles.quiero}>Quiero</p>
-            <div className={styles.containerSumarAlCarrito}>
-                <button
-                    className={styles.restar}
-                    onClick={restar}
-                >
-                    -
-                </button>
-                <input
-                    className={
-                        classDisabled
-                            ? `${styles.inputDisabled}`
-                            : `${styles.cantidadSeleccionada}`
-                    }
-                    type="number"
-                    value={cantidad}
-                    onChange={modificarCantidad}
-                />
-                <button
-                    className={styles.sumar}
-                    onClick={sumar}
-                >
-                    +
-                </button>
-            </div>
-
-            {/* BTN AGREGAR A PEDIDO */}
-            <button
-                className={styles.btnAgregar}
-                disabled={
-                    cantidadModificada === true && cantidad > 0
-                        ? false
-                        : true
-                }
-                onClick={agregar}
-            >
-                Agregar / Modificar
-            </button>
-            {/*  */}
-
-            {/* INFO CARRITO */}
-            <div
+        <div className={styles.generalContainer}>
+            <Card
                 className={
                     productoAgregado || cantidadEnMemoria
-                        ? `${styles.containerInfoCarrito}`
-                        : `${styles.sinProductoEnCarrito}`
+                        ? `${styles.cardContainer} ${styles.cardACtive}`
+                        : `${styles.cardContainer}`
+                }>
+                <a href={props.img} target="_blank" rel="noreferrer noopener">
+                    <div className={styles.imgCard}
+                        style={stylesImg}>
+                    </div>
+                </a>
+
+                <div className={styles.capaSuperior}>
+                    <h4 className={styles.tituloProd}>{props.name}</h4>
+                    <Card.Text className={styles.price}>
+                        $ {props.price}
+                    </Card.Text>
+
+                    <div className={styles.containerSowMore}>
+                        <p>{
+                            infoHidden
+                                ? "Ver mas"
+                                : "Ocultar"
+                        }</p>
+                        <button className={
+                            !infoHidden
+                                ? styles.btnShowMoreDown
+                                : styles.btnShowMoreUp
+                        } onClick={showInfo} />
+                    </div>
+
+                    <p className={styles.quiero}>Quiero</p>
+                    <div className={styles.containerSumarAlCarrito}>
+                        <button
+                            className={styles.restar}
+                            onClick={restar}
+                        >
+                            -
+                        </button>
+                        <input
+                            className={
+                                classDisabled
+                                    ? `${styles.inputDisabled}`
+                                    : `${styles.cantidadSeleccionada}`
+                            }
+                            type="number"
+                            value={cantidad}
+                            onChange={modificarCantidad}
+                        />
+                        <button
+                            className={styles.sumar}
+                            onClick={sumar}
+                        >
+                            +
+                        </button>
+                    </div>
+
+                    {/* BTN AGREGAR A PEDIDO */}
+                    <button
+                        className={styles.btnAgregar}
+                        disabled={
+                            cantidadModificada === true && cantidad > 0
+                                ? false
+                                : true
+                        }
+                        onClick={agregar}
+                    >
+                        Agregar / Modificar
+                    </button>
+                    {/*  */}
+
+                    {/* INFO CARRITO */}
+                    <div
+                        className={
+                            productoAgregado || cantidadEnMemoria
+                                ? `${styles.containerInfoCarrito}`
+                                : `${styles.sinProductoEnCarrito}`
+                        }
+                    >
+                        <p>En carrito: {cantidadEnMemoria} {props.unity}</p>
+                    </div>
+                </div>
+                {/*  */}
+            </Card >
+            <div
+                className=
+                {
+                    infoHidden === false
+                        ? styles.showInfo
+                        : styles.hiddeInfo
                 }
             >
-                <p>En carrito: {cantidadEnMemoria} {props.unity}</p>
+                <Card.Body className={styles.containerCard}>
+                    <Card.Text>
+                        {props.description}
+                    </Card.Text>
+                    <div>
+                        {
+                            props.categorys.map(cat => (
+                                <p key={cat._id}>-{cat.value}</p>
+                            ))
+                        }
+                    </div>
+                </Card.Body>
             </div>
-            {/*  */}
-        </Card >
+        </div>
     )
 }

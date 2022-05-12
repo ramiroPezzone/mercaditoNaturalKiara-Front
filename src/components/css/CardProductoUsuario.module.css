@@ -1,4 +1,20 @@
- .tituloProd {
+.generalContainer {
+  position: relative;
+}
+.tituloProd {
+  text-align: center;
+  width: 100%;
+  color: var(--verde-whatsapp);
+  font-size: 1.5rem !important;
+  padding-top: 20px !important;
+  margin-bottom: 0 !important;
+  background-color: #fff;
+}
+.price {
+  background-color: #fff;
+  margin-bottom: 0 !important;
+  padding-bottom: 10px;
+  color: var(--light-sea-green);
   text-align: center;
 }
 .cardContainer {
@@ -6,6 +22,10 @@
   width: 18rem;
   transition: 0.3s;
   border-radius: 10px;
+  background-color: var(--banana-mania) !important;
+}
+.containerCard {
+  padding-top: 15px !important;
 }
 .containerCard p {
   margin: 0;
@@ -26,18 +46,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 30px 0;
   gap: 5px;
 }
 .restar,
 .sumar {
-  width: 35px;
-  height: 40px;
-  border: none;
+  width: 45px;
+  height: 45px;
+  border: 2px outset rgb(182, 182, 182);
+  border-radius: 50%;
+  transition: 0.2s;
 }
 .restar:hover,
 .sumar:hover {
   background-color: var(--forest-green-web);
+  border: 2px outset var(--verde-whatsapp);
   color: #fff;
+  transition: 0.2s;
 }
 .cantidadSeleccionada {
   background-color: #fff;
@@ -53,11 +78,13 @@ input[type="number"] {
   border: none;
 }
 .quiero {
+  background-color: #fff;
   text-align: center;
-  margin-top: 10px;
+  padding-top: 10px;
   margin-bottom: 0;
 }
 .btnAgregar {
+  width: 100%;
   color: #fff;
   font-size: 1.1em;
   text-align: center;
@@ -171,9 +198,68 @@ input[type="number"] {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-/* .imgCard:hover {
-  background-size: 150%;
-  transition: all .3s;
-} */
+.containerSowMore {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerSowMore p {
+  margin: 0;
+  padding: 0;
+  color: var(--forest-green-web);
+  width: 25%;
+}
+.btnShowMoreDown {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  border: 2px outset var(--swamp-green-faded);
+  background: url(../../assets/imgs/flechaShowMoreUp.png) no-repeat center;
+  background-size: 50%;
+  background-color: var(--swamp-green);
+  border-radius: 50%;
+  transition: .3s;
+}
+.btnShowMoreUp {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  border: 2px outset var(--swamp-green-faded);
+  background: url(../../assets/imgs/flechaShowMoreDown.png) no-repeat center;
+  background-size: 50%;
+  background-color: var(--swamp-green);
+  border-radius: 50%;
+  transition: .3s;
+}
+
+.showInfo {
+  position: absolute;
+  top: 100%;
+  width: 98%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  border: 1px solid rgb(202, 202, 202);
+  background-color: #fff;
+  z-index: 1;
+  box-shadow: 0 3px 10px #000;
+  transition: .7s;
+}
+.hiddeInfo {
+  background-color: #fff;
+  z-index: 1;
+  width: 98%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  transform: translateY(-110%);
+  transition: .7s;
+}
+.capaSuperior {
+  z-index: 10000;
+}
