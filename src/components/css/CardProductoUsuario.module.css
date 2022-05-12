@@ -1,6 +1,9 @@
 .generalContainer {
   position: relative;
 }
+.generalContainerHidden {
+  display: none;
+}
 .containerTituloProd {
   display: -webkit-box;
   -webkit-line-clamp: 1;

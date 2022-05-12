@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axios from "axios";
 import styles from '../css/ProductosUsuarios.module.css'
 import stylesCarrito from "../../components/css/IconoCarrito.module.css";
@@ -7,9 +7,11 @@ import IconoCarrito from '../../components/js/IconoCarrito';
 import { FlexContainer } from '../../components/js/FlexContainer';
 import { Loading } from '../../components/js/Loading';
 import BtnTop from '../../components/js/BtnTop';
+import SearchBar from '../../components/js/SearchBar';
 const URI = require('../../URIs')
 
 export const ProductosUsuarios = () => {
+
     useEffect(() => {
         document.title = `Todo rico y sano`;
     });
@@ -54,6 +56,16 @@ export const ProductosUsuarios = () => {
             : setCarritoActivo(false)
     }, [productosEnCarrito, productosEnMemoria])
 
+    // Search logic
+
+    const [search, setSearch] = useState("")
+
+    const searchParams = (e) => {
+        setSearch(e.target.value)
+    }
+    // 
+
+    // Comienzo de renderizaciones
     if (productos.length === 0 && cargaCompleta === false) {
         return (
             <div className={styles.containerProductosUsuarios}>
@@ -81,6 +93,8 @@ export const ProductosUsuarios = () => {
                 <h3>Tu mercadito Natural</h3>
                 <h4>Nos especializamos en productos para celíacos</h4>
 
+                <SearchBar searchParams={searchParams} />
+
                 <FlexContainer>
                     {
                         productos.map((prod) => (
@@ -94,6 +108,8 @@ export const ProductosUsuarios = () => {
                                 unity={prod.unity}
                                 categorys={prod.categorys}
                                 cambioDeEstadoCarrito={cambioDeEstadoCarrito}
+                                className={styles.cardProducto}
+                                search={search}
                             />
                         ))
                     }

@@ -4,8 +4,6 @@ import styles from '../css/CardProductoUsuario.module.css'
 
 export const CardProductoUsuario = (props) => {
 
-
-
     // Controles de botones sumar y restar y efecto de input disabled
     const [cantidad, setCantidad] = useState(0)
     const [cantidadEnMemoria, setCantidadEnMemoria] = useState(0)
@@ -97,8 +95,52 @@ export const CardProductoUsuario = (props) => {
         setInfoHidden(!infoHidden)
     }
 
+    // Variables de búsqueda
+    let search = props.search.toLowerCase().trim()
+    let name = props.name.toLowerCase().trim()
+
+    const [searchSinAcentos, setSearchSinAcentos] = useState("")
+    const [nameSinAcentos, setNameSinAcentos] = useState("")
+
+    // Name sin acentos
+    useEffect(() => {
+        const reemplazarAcentosEnName = (cadena) => {
+            var chars = {
+                "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
+                "à": "a", "è": "e", "ì": "i", "ò": "o", "ù": "u", "ñ": "n",
+                "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U",
+                "À": "A", "È": "E", "Ì": "I", "Ò": "O", "Ù": "U", "Ñ": "N"
+            }
+            var expr = /[áàéèíìóòúùñ]/ig;
+            var res = cadena.replace(expr, function (e) { return chars[e] });
+            setNameSinAcentos(res)
+        }
+        reemplazarAcentosEnName(name)
+    }, [name])
+
+    // Search sin acentos
+    useEffect(() => {
+        const reemplazarAcentosEnSearch = (cadena) => {
+            var chars = {
+                "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
+                "à": "a", "è": "e", "ì": "i", "ò": "o", "ù": "u", "ñ": "n",
+                "Á": "A", "É": "E", "Í": "I", "Ó": "O", "Ú": "U",
+                "À": "A", "È": "E", "Ì": "I", "Ò": "O", "Ù": "U", "Ñ": "N"
+            }
+            var expr = /[áàéèíìóòúùñ]/ig;
+            var res = cadena.replace(expr, function (e) { return chars[e] });
+            setSearchSinAcentos(res)
+        }
+        reemplazarAcentosEnSearch(search);
+    }, [search])
+    // 
+
     return (
-        <div className={styles.generalContainer}>
+        <div className={
+            nameSinAcentos.includes(searchSinAcentos)
+                ? `${styles.generalContainer}`
+                : `${styles.generalContainerHidden}`
+        }>
             <Card
                 className={
                     productoAgregado || cantidadEnMemoria
@@ -213,6 +255,6 @@ export const CardProductoUsuario = (props) => {
                     </div>
                 </Card.Body>
             </div>
-        </div>
+        </div >
     )
 }
