@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Card } from "react-bootstrap";
+import ListonOferta from "../js/ListonOferta";
 import styles from '../css/CardProductoUsuario.module.css'
 
 export const CardProductoUsuario = (props) => {
@@ -96,9 +97,12 @@ export const CardProductoUsuario = (props) => {
     }
 
     // Variables de búsqueda
-    let search = props.search.toLowerCase().trim()
-    let name = props.name.toLowerCase().trim()
-
+    const [name, setName] = useState("")
+    const [search, setSearch] = useState("")
+    useEffect(() => {
+        props.search !== undefined && setSearch(props.search.toLowerCase().trim())
+        props.name !== undefined && setName(props.name.toLowerCase().trim())
+    }, [props.search, props.name])
     const [searchSinAcentos, setSearchSinAcentos] = useState("")
     const [nameSinAcentos, setNameSinAcentos] = useState("")
 
@@ -147,6 +151,10 @@ export const CardProductoUsuario = (props) => {
                         ? `${styles.cardContainer} ${styles.cardACtive}`
                         : `${styles.cardContainer}`
                 }>
+                <ListonOferta
+                    oferta={props.oferta}
+                />
+
                 <a href={props.img} target="_blank" rel="noreferrer noopener">
                     <div className={styles.imgCard}
                         style={stylesImg}>

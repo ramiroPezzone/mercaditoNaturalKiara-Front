@@ -1,0 +1,13 @@
+.oferta {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: -10px;
+    right: -10px;
+    background: url(../../assets/imgs/liston_oferta.png) no-repeat center;
+    background-size: 100%;
+  }
+  .noOferta {
+    display: none;
+  }
+  

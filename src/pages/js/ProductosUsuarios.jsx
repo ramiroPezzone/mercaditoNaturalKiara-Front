@@ -107,6 +107,7 @@ export const ProductosUsuarios = () => {
                                 price={prod.price}
                                 unity={prod.unity}
                                 categorys={prod.categorys}
+                                oferta={prod.oferta}
                                 cambioDeEstadoCarrito={cambioDeEstadoCarrito}
                                 className={styles.cardProducto}
                                 search={search}
