@@ -245,9 +245,9 @@ input[type="number"] {
   display: flex;
   border: 1px solid rgb(202, 202, 202);
   background-color: #fff;
-  z-index: 1;
+  z-index: 100000;
   box-shadow: 0 3px 10px #000;
-  transition: .7s;
+  transition: transform .7s, z-index 5.5s, box-shadow .5s;
 }
 .hiddeInfo {
   background-color: #fff;
@@ -258,7 +258,7 @@ input[type="number"] {
   margin: auto;
   position: absolute;
   transform: translateY(-110%);
-  transition: .7s;
+  transition: transform .7s, z-index 0s, box-shadow .5s;
 }
 .capaSuperior {
   z-index: 10000;
