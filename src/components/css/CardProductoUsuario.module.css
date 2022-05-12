@@ -1,6 +1,22 @@
 .generalContainer {
   position: relative;
 }
+.containerTituloProd {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tituloHidden {
+  text-align: center;
+  width: 100%;
+  color: var(--verde-whatsapp);
+  font-size: 1.3rem !important;
+  padding-top: 10px !important;
+  margin-bottom: 10px !important;
+  background-color: #fff;
+}
 .tituloProd {
   text-align: center;
   width: 100%;
@@ -221,7 +237,7 @@ input[type="number"] {
   background-size: 50%;
   background-color: var(--swamp-green);
   border-radius: 50%;
-  transition: .3s;
+  transition: 0.3s;
 }
 .btnShowMoreUp {
   width: 40px;
@@ -232,7 +248,7 @@ input[type="number"] {
   background-size: 50%;
   background-color: var(--swamp-green);
   border-radius: 50%;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .showInfo {
@@ -247,7 +263,7 @@ input[type="number"] {
   background-color: #fff;
   z-index: 100000;
   box-shadow: 0 3px 10px #000;
-  transition: transform .7s, z-index 5.5s, box-shadow .5s;
+  transition: transform 0.7s, z-index 5.5s, box-shadow 0.5s;
 }
 .hiddeInfo {
   background-color: #fff;
@@ -258,7 +274,7 @@ input[type="number"] {
   margin: auto;
   position: absolute;
   transform: translateY(-110%);
-  transition: transform .7s, z-index 0s, box-shadow .5s;
+  transition: transform 0.7s, z-index 0s, box-shadow 0.5s;
 }
 .capaSuperior {
   z-index: 10000;

@@ -112,7 +112,11 @@ export const CardProductoUsuario = (props) => {
                 </a>
 
                 <div className={styles.capaSuperior}>
-                    <h4 className={styles.tituloProd}>{props.name}</h4>
+                    <div className={styles.containerTituloProd}>
+                        <h4 className={styles.tituloProd}>
+                            {props.name}
+                        </h4>
+                    </div>
                     <Card.Text className={styles.price}>
                         $ {props.price}
                     </Card.Text>
@@ -192,6 +196,11 @@ export const CardProductoUsuario = (props) => {
                 }
             >
                 <Card.Body className={styles.containerCard}>
+
+                    <h4 className={styles.tituloHidden}>
+                        {props.name}
+                    </h4>
+
                     <Card.Text>
                         {props.description}
                     </Card.Text>
