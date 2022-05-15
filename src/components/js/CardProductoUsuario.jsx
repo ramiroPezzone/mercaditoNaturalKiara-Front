@@ -10,7 +10,6 @@ export const CardProductoUsuario = (props) => {
     const [cantidadEnMemoria, setCantidadEnMemoria] = useState(0)
     const [classDisabled, setClassDisabled] = useState(false)
     const [cantidadModificada, setCantidadModificada] = useState(false)
-    const [infoHidden, setInfoHidden] = useState(true)
 
     useEffect(() => {
         if (localStorage.getItem(props.id)) {
@@ -92,8 +91,16 @@ export const CardProductoUsuario = (props) => {
         backgroundImage: `url("${props.img}")`
     }
 
+    // 
     const showInfo = () => {
-        setInfoHidden(!infoHidden)
+        props.mostrarDetalles({
+            id: props.id,
+            name: props.name,
+            description: props.description,
+            image: props.img,
+            price: props.price,
+            unity: props.unity
+        })
     }
 
     // Variables de búsqueda
@@ -144,7 +151,8 @@ export const CardProductoUsuario = (props) => {
             nameSinAcentos.includes(searchSinAcentos)
                 ? `${styles.generalContainer}`
                 : `${styles.generalContainerHidden}`
-        }>
+        }
+        >
             <Card
                 className={
                     productoAgregado || cantidadEnMemoria
@@ -155,11 +163,11 @@ export const CardProductoUsuario = (props) => {
                     oferta={props.oferta}
                 />
 
-                <a href={props.img} target="_blank" rel="noreferrer noopener">
-                    <div className={styles.imgCard}
-                        style={stylesImg}>
-                    </div>
-                </a>
+                <div
+                    className={styles.imgCard}
+                    style={stylesImg}
+                    onClick={showInfo}
+                />
 
                 <div className={styles.capaSuperior}>
                     <div className={styles.containerTituloProd}>
@@ -172,16 +180,8 @@ export const CardProductoUsuario = (props) => {
                     </Card.Text>
 
                     <div className={styles.containerSowMore}>
-                        <p>{
-                            infoHidden
-                                ? "Ver mas"
-                                : "Ocultar"
-                        }</p>
-                        <button className={
-                            !infoHidden
-                                ? styles.btnShowMoreDown
-                                : styles.btnShowMoreUp
-                        } onClick={showInfo} />
+                        <p>Ver mas...</p>
+                        <button className={styles.btnShowMoreDown} onClick={showInfo} />
                     </div>
 
                     <p className={styles.quiero}>Quiero</p>
@@ -237,14 +237,7 @@ export const CardProductoUsuario = (props) => {
                 </div>
                 {/*  */}
             </Card >
-            <div
-                className=
-                {
-                    infoHidden === false
-                        ? styles.showInfo
-                        : styles.hiddeInfo
-                }
-            >
+            <div className={styles.hiddeInfo} >
                 <Card.Body className={styles.containerCard}>
 
                     <h4 className={styles.tituloHidden}>

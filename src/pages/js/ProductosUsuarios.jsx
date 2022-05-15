@@ -8,6 +8,7 @@ import { FlexContainer } from '../../components/js/FlexContainer';
 import { Loading } from '../../components/js/Loading';
 import BtnTop from '../../components/js/BtnTop';
 import SearchBar from '../../components/js/SearchBar';
+import ModalProducto from '../../components/js/ModalProducto';
 const URI = require('../../URIs')
 
 export const ProductosUsuarios = () => {
@@ -63,6 +64,16 @@ export const ProductosUsuarios = () => {
     const searchParams = (e) => {
         setSearch(e.target.value)
     }
+    //
+
+    // Mostrar detalles
+    const [detalles, setDetalles] = useState({})
+    const mostrarDetalles = ({ id, name, description, image, price, unity }) => {
+        setDetalles({ id, name, description, image, price, unity })
+    }
+    const ocultarModal = () => {
+        setDetalles({})
+    }
     // 
 
     // Comienzo de renderizaciones
@@ -95,7 +106,8 @@ export const ProductosUsuarios = () => {
 
                 <SearchBar searchParams={searchParams} />
 
-                <FlexContainer>
+                <FlexContainer
+                    className={styles.flexContainerCards}>
                     {
                         productos.map((prod) => (
                             <CardProductoUsuario
@@ -111,6 +123,7 @@ export const ProductosUsuarios = () => {
                                 cambioDeEstadoCarrito={cambioDeEstadoCarrito}
                                 className={styles.cardProducto}
                                 search={search}
+                                mostrarDetalles={mostrarDetalles}
                             />
                         ))
                     }
@@ -121,6 +134,10 @@ export const ProductosUsuarios = () => {
                 />
                 <BtnTop />
             </div>
+            <ModalProducto
+                detalles={detalles}
+                ocultarModal={ocultarModal}
+            />
         </div>
     )
 }

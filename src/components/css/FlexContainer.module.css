@@ -14,3 +14,10 @@
     align-items: stretch;
   }
 }
+.blockScreen {
+  overflow-y: hidden;
+}
+.unblockScreen {
+  overflow-y: initial;
+}
+

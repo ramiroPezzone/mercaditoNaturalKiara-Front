@@ -7,6 +7,7 @@ import { CardProductoUsuario } from '../../components/js/CardProductoUsuario';
 import IconoCarrito from "../../components/js/IconoCarrito";
 import { FlexContainer } from '../../components/js/FlexContainer';
 import { Loading } from '../../components/js/Loading';
+import ModalProducto from '../../components/js/ModalProducto';
 const URI = require('../../URIs')
 
 export const OneCategory = () => {
@@ -59,6 +60,17 @@ export const OneCategory = () => {
         }
     }
 
+        // Mostrar detalles
+        const [detalles, setDetalles] = useState({})
+        const mostrarDetalles = ({ id, name, description, image, price, unity }) => {
+            setDetalles({ id, name, description, image, price, unity })
+        }
+        const ocultarModal = () => {
+            setDetalles({})
+        }
+        // 
+    
+
     if (prodsDeCat.length === 0 && cargaCompleta === false) {
         return (
             <div className={styles.containerOneCategory}>
@@ -99,6 +111,7 @@ export const OneCategory = () => {
                             unity={prod.unity}
                             categorys={prod.categorys}
                             cambioDeEstadoCarrito={cambioDeEstadoCarrito}
+                            mostrarDetalles={mostrarDetalles}
                         />
                     ))
                 }
@@ -106,6 +119,10 @@ export const OneCategory = () => {
             <IconoCarrito
                 estadoCarrito={carritoActivo}
                 className={stylesCarrito.iconoCarrito}
+            />
+            <ModalProducto
+                detalles={detalles}
+                ocultarModal={ocultarModal}
             />
         </div>
     )

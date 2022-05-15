@@ -6,6 +6,7 @@ import IconoCarrito from '../../components/js/IconoCarrito'
 import { Loading } from '../../components/js/Loading'
 import styles from '../css/ProductosUsuarios.module.css'
 import stylesCarrito from "../../components/css/IconoCarrito.module.css";
+import ModalProducto from '../../components/js/ModalProducto'
 const axios = require('axios')
 const URI = require('../../URIs')
 
@@ -54,6 +55,16 @@ const Ofertas = () => {
             : setCarritoActivo(false)
     }, [productosEnCarrito, productosEnMemoria])
 
+    // Mostrar detalles
+    const [detalles, setDetalles] = useState({})
+    const mostrarDetalles = ({ id, name, description, image, price, unity }) => {
+        setDetalles({ id, name, description, image, price, unity })
+    }
+    const ocultarModal = () => {
+        setDetalles({})
+    }
+    // 
+
     if (productos.length === 0 && cargaCompleta === false) {
         return (
             <div className={styles.containerProductosUsuarios}>
@@ -93,6 +104,7 @@ const Ofertas = () => {
                                 unity={prod.unity}
                                 categorys={prod.categorys}
                                 cambioDeEstadoCarrito={cambioDeEstadoCarrito}
+                                mostrarDetalles={mostrarDetalles}
                             />
                         ))
                     }
@@ -103,8 +115,11 @@ const Ofertas = () => {
                 />
                 <BtnTop />
             </div>
+            <ModalProducto
+                detalles={detalles}
+                ocultarModal={ocultarModal}
+            />
         </div>
-
     )
 }
 
