@@ -23,9 +23,19 @@ export const CardProductoUsuario = (props) => {
     // localStorage.clear()
 
     // Sumar y restar cantidades
+
+    const unityParsed = props.unity.toLowerCase()
+    const seteadorDeSteps = () => {
+        if (unityParsed.includes("gramo")) {
+            return 100
+        } else {
+            return 1
+        }
+    }
+
     const restar = () => {
         cantidad > 0
-            && setCantidad(cantidad - 1)
+            && setCantidad(cantidad - seteadorDeSteps())
         setCantidadModificada(true)
         if (cantidad === 1) {
             localStorage.removeItem(props.id)
@@ -39,7 +49,7 @@ export const CardProductoUsuario = (props) => {
     }
 
     const sumar = () => {
-        setCantidad(cantidad + 1)
+        setCantidad(cantidad + seteadorDeSteps())
         setCantidadModificada(true)
     }
 
@@ -67,6 +77,7 @@ export const CardProductoUsuario = (props) => {
             id: props.id,
             name: props.name,
             price: props.price,
+            unity: props.unity,
             quantity: cantidad
         }
         setProductoAAgregar(prodAAgregar)

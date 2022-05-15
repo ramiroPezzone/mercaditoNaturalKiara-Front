@@ -119,6 +119,7 @@ const Ofertas = () => {
                 detalles={detalles}
                 ocultarModal={ocultarModal}
             />
+            <BtnTop />
         </div>
     )
 }

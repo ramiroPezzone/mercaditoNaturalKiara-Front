@@ -9,6 +9,10 @@ h4 {
   padding: 20px 0;
   margin: 0 auto;
   max-width: 500px;
+  color: var(--forest-green-web);
+}
+label {
+  color: var(--forest-green-web);
 }
 form {
   width: 85vw;
@@ -85,7 +89,12 @@ form textarea {
 .faltaDireccion {
   animation: error 300ms;
   position: absolute;
-  color: red;
+  width: 100%;
+  text-align: center;
+  padding: 3px 8px;
+  margin: 3px;
+  color: var(--banana-mania);
+  background-color: red;
 }
 .nombreOk,
 .direccionOk {
@@ -177,4 +186,9 @@ form textarea {
   height: 30px;
   background: url(../../assets/imgs/ok.png) no-repeat center;
   background-size: 100%;
+}
+@media (max-width: 425px) {
+  .containerMuestraMensajeAEnviar {
+    max-width: 80%;
+  }
 }

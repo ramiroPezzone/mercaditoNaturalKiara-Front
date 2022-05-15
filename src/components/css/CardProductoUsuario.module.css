@@ -38,6 +38,7 @@
 }
 .cardContainer {
   border: 2px outset #fff;
+  box-shadow: 0 0 15px #000;
   width: 18rem;
   transition: 0.3s;
   border-radius: 10px;
@@ -52,7 +53,7 @@
   padding-bottom: 3px;
 }
 .cardACtive {
-  box-shadow: 0 0 4px 1px var(--verde-whatsapp);
+  box-shadow: 0 0 20px 1px var(--verde-whatsapp);
 }
 .lineaDivisoraCardConCarrito {
   width: 100%;

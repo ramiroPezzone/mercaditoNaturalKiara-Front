@@ -23,9 +23,10 @@ export const Carrito = () => {
 
   // Almacenando en la variable "valores" lo que viene del localStorage
   const [valores, setValores] = useState(0)
+
   useEffect(() => {
     setValores(productosEnMemoria.map((prod) => (
-      prod.price * prod.quantity
+      prod.unity.includes("ramo") ? (prod.price * prod.quantity) / 100 : prod.price * prod.quantity
     )))
   }, [productosEnMemoria])
   // 
@@ -94,6 +95,7 @@ export const Carrito = () => {
               <th className={styles.centrar}>#</th>
               <th>Producto</th>
               <th className={styles.centrar}>Cantidad</th>
+              <th className={styles.centrar}>Unidad</th>
               <th className={`${styles.centrar} ${styles.celdaSizeFixed}`}>Precio Unitario</th>
               <th className={styles.centrar}>Total</th>
               <th className={styles.centrar}>Eliminar</th>
@@ -108,6 +110,7 @@ export const Carrito = () => {
                   name={prod.name}
                   price={prod.price}
                   quantity={prod.quantity}
+                  unity={prod.unity}
                   id={prod.id}
                   i={i}
                   cambioDeValoresEnMemoriaSumados={cambioDeValoresEnMemoriaSumados}

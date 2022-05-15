@@ -14,7 +14,6 @@ const ModalProducto = ({ detalles, ocultarModal }) => {
       document.querySelector("*").style.overflowY = "hidden"
       console.log(detallesModal.current);
       detallesModal.current.style.overflowY = "scroll"
-      // document.querySelector(".descriptionModal").style.overflowY = "hidden"
     } else {
       document.querySelector("*").style.overflowY = "initial"
     }

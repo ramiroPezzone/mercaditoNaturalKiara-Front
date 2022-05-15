@@ -10,6 +10,7 @@
 .subtituloCarrito {
   text-align: center;
   text-shadow: 0 0 5px #fff;
+  color: var(--forest-green-web);
 }
 .containerTabla {
   display: block;
@@ -44,6 +45,8 @@
 
 .containerCarritoVacio {
   background-color: var(--banana-mania);
+  color: var(--forest-green-web);
+  font-size: 1.2rem;
   min-height: calc(100vh - 108.4px);
 }
 .containerCarritoVacio p {

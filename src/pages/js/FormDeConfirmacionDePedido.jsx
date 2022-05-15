@@ -36,13 +36,13 @@ export const FormDeConfirmacionDePedido = (props) => {
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const subTotales = productosEnMemoria.map((prod) => (
-    parseInt((`${prod.price * prod.quantity}`))
+    parseInt((`${prod.unity.includes("ramo") ? (prod.price * prod.quantity) / 100 : prod.price * prod.quantity}`))
   ))
 
   const total = subTotales.reduce((prevVal, currVal) => prevVal + currVal, 0)
 
   const productos = productosEnMemoria.map((prod) => (
-    (`${prod.name} x ${prod.quantity} ($${prod.price} c/u) = $${prod.price * prod.quantity}`)
+    (`${prod.name} x ${prod.quantity} ($${prod.price} c/u) = $${prod.unity.includes("ramo") ? (prod.price * prod.quantity) / 100 : prod.price * prod.quantity}`)
   ))
 
   const productosConSalto = productos.join('\n\n')
@@ -203,7 +203,9 @@ export const FormDeConfirmacionDePedido = (props) => {
               ------------------------------
               {
                 productosEnMemoria.map((prod) => (
-                  <p key={prod.id}>{prod.name} x {prod.quantity} (${prod.price}) = ${prod.quantity * prod.price}</p>
+                  <p key={prod.id}>{prod.name} x {prod.quantity} (${prod.price}) = ${
+                    prod.unity.includes("ramo") ? (prod.price * prod.quantity) / 100 : prod.price * prod.quantity
+                  }</p>
                 ))
               }
               ------------------------------
