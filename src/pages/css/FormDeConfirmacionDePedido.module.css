@@ -192,3 +192,8 @@ form textarea {
     max-width: 80%;
   }
 }
+@media (max-width: 550px) {
+  label {
+    margin-top: 10px;
+  }
+}
