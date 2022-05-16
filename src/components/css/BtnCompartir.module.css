@@ -1,14 +1,7 @@
-.containerBtnCompartirDisplaced{
+.containerBtnCompartir {
     position: absolute;
     top: 83px;
-    right: 110px;
-    z-index: 1;
-    transition: .5s;
-}
-.containerBtnCompartirLonely {
-    position: absolute;
-    top: 83px;
-    right: 2.2vw;
+    left: 2.2vw;
     z-index: 1;
     transition: .3s;
 }

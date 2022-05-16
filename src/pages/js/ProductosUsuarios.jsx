@@ -100,9 +100,8 @@ export const ProductosUsuarios = () => {
 
     return (
         <>
-            <BtnCompartir 
-            url={"https://mercadito-natutal-kiara-v1-front.vercel.app/"}
-            carritoActivo={carritoActivo}
+            <BtnCompartir
+                url={"https://mercadito-natutal-kiara-v1-front.vercel.app/"}
             />
             <div className={styles.containerProductosUsuarios}>
                 <div className={styles.containerProductosUsuarios}>

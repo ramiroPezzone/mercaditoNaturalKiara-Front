@@ -90,7 +90,6 @@ const Ofertas = () => {
         <>
             <BtnCompartir
                 url={"https://mercadito-natutal-kiara-v1-front.vercel.app/ofertas"}
-                carritoActivo={carritoActivo}
             />
             <div className={styles.containerProductosUsuarios}>
                 <div className={styles.containerProductosUsuarios}>

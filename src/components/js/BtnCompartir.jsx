@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../css/BtnCompartir.module.css'
 import Swal from 'sweetalert2'
 
-const BtnCompartir = ({ carritoActivo, url }) => {
+const BtnCompartir = ({ url }) => {
 
   const share = (url) => {
     let shareObject = {
@@ -31,11 +31,7 @@ const BtnCompartir = ({ carritoActivo, url }) => {
   }
 
   return (
-    <div className={
-      carritoActivo
-        ? styles.containerBtnCompartirDisplaced
-        : styles.containerBtnCompartirLonely
-    }
+    <div className={styles.containerBtnCompartir}
     >
       <div className={styles.btnCompartir} onClick={() => share(url)} title="compartir enlace" />
     </div>

@@ -101,7 +101,6 @@ export const OneCategory = () => {
         <>
             <BtnCompartir
                 url={`https://mercadito-natutal-kiara-v1-front.vercel.app/${param.cat}`}
-                carritoActivo={carritoActivo}
             />
             <div className={styles.containerOneCategory}>
                 <h5 className={styles.tituloOneCategory}>Categoría: {categorySelected}</h5>
