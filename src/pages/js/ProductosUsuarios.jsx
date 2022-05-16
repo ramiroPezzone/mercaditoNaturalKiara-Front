@@ -97,7 +97,7 @@ export const ProductosUsuarios = () => {
             </div>
         )
     }
-localStorage.clear()
+
     return (
         <>
             <BtnCompartir
