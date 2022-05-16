@@ -1,7 +1,16 @@
-.containerBtnCompartir {
-  position: absolute;
-  top: 80px;
-  right: 20px;
+.containerBtnCompartirDisplaced{
+    position: absolute;
+    top: 83px;
+    right: 110px;
+    z-index: 1;
+    transition: .5s;
+}
+.containerBtnCompartirLonely {
+    position: absolute;
+    top: 83px;
+    right: 2.2vw;
+    z-index: 1;
+    transition: .3s;
 }
 .btnCompartir {
   width: 50px;
@@ -9,5 +18,12 @@
   background: url(../../assets/imgs/btn-compartir.png) no-repeat center;
   background-size: 100%;
   filter: drop-shadow(0 0 5px #000);
+  cursor: pointer;
+  transition: all .3s;
 }
-
+.btnCompartir:hover {
+    width: 55px;
+    height: 55px;
+    transform: rotate(-20deg);
+    transition: all .3s;
+}

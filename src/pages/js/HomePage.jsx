@@ -10,7 +10,9 @@ export const HomePage = () => {
   return (
     <>
       <div className={styles.containerHomePage}>
-        <BtnCompartir />
+        <BtnCompartir
+          url={"https://mercadito-natutal-kiara-v1-front.vercel.app/"}
+        />
         <div className={styles.logoHomePage} />
         <a href="https://www.instagram.com/mercadito_natural_kiara/" className={styles.enlaceInstagram} target="_blank" rel="noopener noreferrer" title='Ir a instagram'>
           <div className={styles.containerLogoInstagram} />

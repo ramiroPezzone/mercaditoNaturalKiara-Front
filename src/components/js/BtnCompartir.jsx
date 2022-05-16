@@ -2,10 +2,9 @@ import React from 'react'
 import styles from '../css/BtnCompartir.module.css'
 import Swal from 'sweetalert2'
 
-const BtnCompartir = () => {
+const BtnCompartir = ({ carritoActivo, url }) => {
 
-  const share = () => {
-    let url = "https://mercadito-natutal-kiara-v1-front.vercel.app/"
+  const share = (url) => {
     let shareObject = {
       title: "Mercadito Natural Kiara",
       text: "Mercadito Natural Kiara",
@@ -24,7 +23,7 @@ const BtnCompartir = () => {
         title: 'Enlace copiado al portapapeles',
         icon: 'success',
         confirmButtonText: 'Aceptar',
-        timer: 3000,
+        timer: 3500,
         timerProgressBar: true,
         confirmButtonColor: "rgba(160, 183, 141, 1);"
       })
@@ -32,8 +31,13 @@ const BtnCompartir = () => {
   }
 
   return (
-    <div className={styles.containerBtnCompartir}>
-      <div className={styles.btnCompartir} onClick={share} />
+    <div className={
+      carritoActivo
+        ? styles.containerBtnCompartirDisplaced
+        : styles.containerBtnCompartirLonely
+    }
+    >
+      <div className={styles.btnCompartir} onClick={() => share(url)} title="compartir enlace" />
     </div>
   )
 }

@@ -9,6 +9,7 @@ import { Loading } from '../../components/js/Loading';
 import BtnTop from '../../components/js/BtnTop';
 import SearchBar from '../../components/js/SearchBar';
 import ModalProducto from '../../components/js/ModalProducto';
+import BtnCompartir from '../../components/js/BtnCompartir';
 const URI = require('../../URIs')
 
 export const ProductosUsuarios = () => {
@@ -98,46 +99,52 @@ export const ProductosUsuarios = () => {
     }
 
     return (
-        <div className={styles.containerProductosUsuarios}>
-            <div className={styles.containerProductosUsuarios}>
-                <h2>Kiara</h2>
-                <h3>Tu mercadito Natural</h3>
-                <h4>Nos especializamos en productos para celíacos</h4>
-
-                <SearchBar searchParams={searchParams} />
-
-                <FlexContainer
-                    className={styles.flexContainerCards}>
-                    {
-                        productos.map((prod) => (
-                            <CardProductoUsuario
-                                key={prod._id}
-                                id={prod._id}
-                                name={prod.name}
-                                img={prod.image}
-                                description={prod.description}
-                                price={prod.price}
-                                unity={prod.unity}
-                                categorys={prod.categorys}
-                                oferta={prod.oferta}
-                                cambioDeEstadoCarrito={cambioDeEstadoCarrito}
-                                className={styles.cardProducto}
-                                search={search}
-                                mostrarDetalles={mostrarDetalles}
-                            />
-                        ))
-                    }
-                </FlexContainer>
-                <IconoCarrito
-                    estadoCarrito={carritoActivo}
-                    className={stylesCarrito.iconoCarrito}
-                />
-                <BtnTop />
-            </div>
-            <ModalProducto
-                detalles={detalles}
-                ocultarModal={ocultarModal}
+        <>
+            <BtnCompartir 
+            url={"https://mercadito-natutal-kiara-v1-front.vercel.app/"}
+            carritoActivo={carritoActivo}
             />
-        </div>
+            <div className={styles.containerProductosUsuarios}>
+                <div className={styles.containerProductosUsuarios}>
+                    <h2>Kiara</h2>
+                    <h3>Tu mercadito Natural</h3>
+                    <h4>Nos especializamos en productos para celíacos</h4>
+
+                    <SearchBar searchParams={searchParams} />
+
+                    <FlexContainer
+                        className={styles.flexContainerCards}>
+                        {
+                            productos.map((prod) => (
+                                <CardProductoUsuario
+                                    key={prod._id}
+                                    id={prod._id}
+                                    name={prod.name}
+                                    img={prod.image}
+                                    description={prod.description}
+                                    price={prod.price}
+                                    unity={prod.unity}
+                                    categorys={prod.categorys}
+                                    oferta={prod.oferta}
+                                    cambioDeEstadoCarrito={cambioDeEstadoCarrito}
+                                    className={styles.cardProducto}
+                                    search={search}
+                                    mostrarDetalles={mostrarDetalles}
+                                />
+                            ))
+                        }
+                    </FlexContainer>
+                    <IconoCarrito
+                        estadoCarrito={carritoActivo}
+                        className={stylesCarrito.iconoCarrito}
+                    />
+                    <BtnTop />
+                </div>
+                <ModalProducto
+                    detalles={detalles}
+                    ocultarModal={ocultarModal}
+                />
+            </div>
+        </>
     )
 }

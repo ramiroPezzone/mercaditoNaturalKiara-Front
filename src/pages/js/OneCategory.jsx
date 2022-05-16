@@ -9,6 +9,7 @@ import { FlexContainer } from '../../components/js/FlexContainer';
 import { Loading } from '../../components/js/Loading';
 import ModalProducto from '../../components/js/ModalProducto';
 import BtnTop from '../../components/js/BtnTop';
+import BtnCompartir from '../../components/js/BtnCompartir';
 const URI = require('../../URIs')
 
 export const OneCategory = () => {
@@ -97,35 +98,41 @@ export const OneCategory = () => {
 
 
     return (
-        <div className={styles.containerOneCategory}>
-            <h5 className={styles.tituloOneCategory}>Categoría: {categorySelected}</h5>
-            <FlexContainer>
-                {
-                    prodsDeCat.map((prod) => (
-                        <CardProductoUsuario
-                            key={prod._id}
-                            id={prod._id}
-                            name={prod.name}
-                            img={prod.image}
-                            description={prod.description}
-                            price={prod.price}
-                            unity={prod.unity}
-                            categorys={prod.categorys}
-                            cambioDeEstadoCarrito={cambioDeEstadoCarrito}
-                            mostrarDetalles={mostrarDetalles}
-                        />
-                    ))
-                }
-            </FlexContainer>
-            <IconoCarrito
-                estadoCarrito={carritoActivo}
-                className={stylesCarrito.iconoCarrito}
+        <>
+            <BtnCompartir
+                url={`https://mercadito-natutal-kiara-v1-front.vercel.app/${param.cat}`}
+                carritoActivo={carritoActivo}
             />
-            <ModalProducto
-                detalles={detalles}
-                ocultarModal={ocultarModal}
-            />
-            <BtnTop />
-        </div>
+            <div className={styles.containerOneCategory}>
+                <h5 className={styles.tituloOneCategory}>Categoría: {categorySelected}</h5>
+                <FlexContainer>
+                    {
+                        prodsDeCat.map((prod) => (
+                            <CardProductoUsuario
+                                key={prod._id}
+                                id={prod._id}
+                                name={prod.name}
+                                img={prod.image}
+                                description={prod.description}
+                                price={prod.price}
+                                unity={prod.unity}
+                                categorys={prod.categorys}
+                                cambioDeEstadoCarrito={cambioDeEstadoCarrito}
+                                mostrarDetalles={mostrarDetalles}
+                            />
+                        ))
+                    }
+                </FlexContainer>
+                <IconoCarrito
+                    estadoCarrito={carritoActivo}
+                    className={stylesCarrito.iconoCarrito}
+                />
+                <ModalProducto
+                    detalles={detalles}
+                    ocultarModal={ocultarModal}
+                />
+                <BtnTop />
+            </div>
+        </>
     )
 }

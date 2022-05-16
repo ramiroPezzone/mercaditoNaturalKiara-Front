@@ -7,6 +7,7 @@ import { Loading } from '../../components/js/Loading'
 import styles from '../css/ProductosUsuarios.module.css'
 import stylesCarrito from "../../components/css/IconoCarrito.module.css";
 import ModalProducto from '../../components/js/ModalProducto'
+import BtnCompartir from '../../components/js/BtnCompartir'
 const axios = require('axios')
 const URI = require('../../URIs')
 
@@ -86,41 +87,47 @@ const Ofertas = () => {
     }
 
     return (
-        <div className={styles.containerProductosUsuarios}>
+        <>
+            <BtnCompartir
+                url={"https://mercadito-natutal-kiara-v1-front.vercel.app/ofertas"}
+                carritoActivo={carritoActivo}
+            />
             <div className={styles.containerProductosUsuarios}>
-                <h2>Kiara</h2>
-                <h3>Tu mercadito Natural</h3>
-                <h3>Productos en oferta!</h3>
-                <FlexContainer>
-                    {
-                        productos.map((prod) => (
-                            <CardProductoUsuario
-                                key={prod._id}
-                                id={prod._id}
-                                name={prod.name}
-                                img={prod.image}
-                                description={prod.description}
-                                price={prod.price}
-                                unity={prod.unity}
-                                categorys={prod.categorys}
-                                cambioDeEstadoCarrito={cambioDeEstadoCarrito}
-                                mostrarDetalles={mostrarDetalles}
-                            />
-                        ))
-                    }
-                </FlexContainer>
-                <IconoCarrito
-                    estadoCarrito={carritoActivo}
-                    className={stylesCarrito.iconoCarrito}
+                <div className={styles.containerProductosUsuarios}>
+                    <h2>Kiara</h2>
+                    <h3>Tu mercadito Natural</h3>
+                    <h3>Productos en oferta!</h3>
+                    <FlexContainer>
+                        {
+                            productos.map((prod) => (
+                                <CardProductoUsuario
+                                    key={prod._id}
+                                    id={prod._id}
+                                    name={prod.name}
+                                    img={prod.image}
+                                    description={prod.description}
+                                    price={prod.price}
+                                    unity={prod.unity}
+                                    categorys={prod.categorys}
+                                    cambioDeEstadoCarrito={cambioDeEstadoCarrito}
+                                    mostrarDetalles={mostrarDetalles}
+                                />
+                            ))
+                        }
+                    </FlexContainer>
+                    <IconoCarrito
+                        estadoCarrito={carritoActivo}
+                        className={stylesCarrito.iconoCarrito}
+                    />
+                    <BtnTop />
+                </div>
+                <ModalProducto
+                    detalles={detalles}
+                    ocultarModal={ocultarModal}
                 />
                 <BtnTop />
             </div>
-            <ModalProducto
-                detalles={detalles}
-                ocultarModal={ocultarModal}
-            />
-            <BtnTop />
-        </div>
+        </>
     )
 }
 
