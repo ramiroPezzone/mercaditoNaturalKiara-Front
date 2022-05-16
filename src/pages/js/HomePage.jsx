@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import BtnCompartir from '../../components/js/BtnCompartir';
 import styles from '../css/HomePage.module.css'
 
 export const HomePage = () => {
@@ -9,6 +10,7 @@ export const HomePage = () => {
   return (
     <>
       <div className={styles.containerHomePage}>
+        <BtnCompartir />
         <div className={styles.logoHomePage} />
         <a href="https://www.instagram.com/mercadito_natural_kiara/" className={styles.enlaceInstagram} target="_blank" rel="noopener noreferrer" title='Ir a instagram'>
           <div className={styles.containerLogoInstagram} />

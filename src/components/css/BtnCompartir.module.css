@@ -1,0 +1,13 @@
+.containerBtnCompartir {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+}
+.btnCompartir {
+  width: 50px;
+  height: 50px;
+  background: url(../../assets/imgs/btn-compartir.png) no-repeat center;
+  background-size: 100%;
+  filter: drop-shadow(0 0 5px #000);
+}
+
